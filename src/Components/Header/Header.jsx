@@ -1,14 +1,18 @@
 import React from 'react';
 import styles from './Header.module.scss'
 
-const Header = () => {
+const Header = ({ isAuth, setAuth }) => {
     return (
         <header>
             <div className={styles.logo}>logo</div>
 
             <div className={styles.right}>
                 <span>Hello, User</span>
-                <button className={styles.log_btn}>logout</button>
+                <button onClick={() => setAuth(!isAuth)} className={styles.log_btn}>
+                    {isAuth ?
+                        <p>logout</p> : <p>login</p>
+                    }
+                </button>
             </div>
         </header>
     )
