@@ -7,7 +7,8 @@ const Header = ({ isAuth, setAuth }) => {
             <div className={styles.logo}>logo</div>
 
             <div className={styles.right}>
-                <span>Hello, User</span>
+                {isAuth && <span>Hello, User</span>}
+
                 <button onClick={() => setAuth(!isAuth)} className={styles.log_btn}>
                     {isAuth ?
                         <p>logout</p> : <p>login</p>
