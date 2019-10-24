@@ -1,0 +1,14 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5vh 20px;
+  background: grey;
+}
+
+.right {
+  span {
+    margin-right: 10px;
+  }
+}
