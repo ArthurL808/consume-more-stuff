@@ -3,8 +3,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5vh 20px;
+  height: 10vh;
+  padding: 0 20px;
   background: grey;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .right {
