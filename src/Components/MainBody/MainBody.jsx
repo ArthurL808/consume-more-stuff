@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './MainBody.module.scss'
 
 // IMPORT ALL BODY COMPOENENTS HERE
+import UnAuth from '../UnAuth';
 
 const MainBody = ({ isAuth }) => {
     return (
@@ -10,7 +11,7 @@ const MainBody = ({ isAuth }) => {
             {isAuth ?
                 <h1>Logged In</h1>
                 :
-                <h1>Logged Out</h1>
+                <UnAuth />
             }
 
         </div>

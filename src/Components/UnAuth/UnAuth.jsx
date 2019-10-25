@@ -1,8 +1,11 @@
 import React from 'react';
+import styles from './UnAuth.module.scss'
 
 const UnAuth = () => {
     return (
-        <h1>Un Auth View Bruh</h1>
+        <div className={styles.container}>
+            <h1>Un Auth View Bruh</h1>
+        </div>
     )
 }
 
