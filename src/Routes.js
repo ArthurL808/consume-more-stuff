@@ -1,6 +1,7 @@
 import React from 'react';
 import UnAuthAll from './Components/UnAuthAll';
 import UnAuthVehicles from './Components/UnAuthVehicles';
+import UnAuthComputers from './Components/UnAuthComputers';
 
 export const routes = [
     {
@@ -14,7 +15,7 @@ export const routes = [
     },
     {
         path: '/computers',
-        main: () => <h2>Computers</h2>
+        main: () => <UnAuthComputers />
     },
     {
         path: '/appliances',
