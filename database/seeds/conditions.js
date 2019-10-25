@@ -5,11 +5,11 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('conditions').insert([
-        {name: 'new'},
-        {name: 'good'},
-        {name: 'fair'},
-        {name: 'worn'},
-        {name: 'used'}
+        {condition: 'new'},
+        {condition: 'good'},
+        {condition: 'fair'},
+        {condition: 'worn'},
+        {condition: 'used'}
       ]);
     });
 };
