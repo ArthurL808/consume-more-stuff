@@ -2,7 +2,7 @@ const bookshelf = require('../bookshelf');
 
 class Item extends bookshelf.Model {
     get tableName() {
-        return 'item';
+        return 'items';
     }
     get hasTimestamps() {
         return true;
