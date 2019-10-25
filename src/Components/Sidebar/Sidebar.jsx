@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import styles from './Sidebar.module.scss';
+import { Link } from 'react-router-dom'
 
 const Sidebar = ({ isAuth, view, setView }) => {
+
     return (
         <div className={styles.sidebar}>
             {!isAuth && <h3>Home Categories</h3>}
@@ -14,11 +16,11 @@ const Sidebar = ({ isAuth, view, setView }) => {
                         <button>new</button>
                     </Fragment> :
                     <Fragment>
-                        <li onClick={(e) => setView(e.target.textContent)}>Vehicles</li>
-                        <li onClick={(e) => setView(e.target.textContent)}>Computers</li>
-                        <li onClick={(e) => setView(e.target.textContent)}>Appliances</li>
-                        <li onClick={(e) => setView(e.target.textContent)}>Furniture</li>
-                        <button>ALL</button>
+                        <li><Link to="/vehicles">Vehicles</Link></li>
+                        <li><Link to="/computers">Computers</Link></li>
+                        <li><Link to="/appliances">Appliances</Link></li>
+                        <li><Link to="/furniture">Furniture</Link></li>
+                        <button><Link to="/">ALL</Link></button>
                     </Fragment>
                 }
 
