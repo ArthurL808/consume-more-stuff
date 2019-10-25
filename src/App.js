@@ -12,7 +12,6 @@ import MainBody from './Components/MainBody'
 
 function App() {
   const [isAuth, setAuth] = useState(false);
-
   const [view, setView] = useState('');
 
   return (

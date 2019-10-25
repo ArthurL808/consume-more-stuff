@@ -20,7 +20,7 @@ const Sidebar = ({ isAuth, view, setView }) => {
                         <li><Link to="/computers">Computers</Link></li>
                         <li><Link to="/appliances">Appliances</Link></li>
                         <li><Link to="/furniture">Furniture</Link></li>
-                        <button><Link to="/">ALL</Link></button>
+                        <button><Link to="/all">ALL</Link></button>
                     </Fragment>
                 }
 

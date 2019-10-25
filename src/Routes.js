@@ -1,10 +1,11 @@
 import React from 'react';
+import UnAuthAll from './Components/UnAuthAll';
 
 export const routes = [
     {
-        path: '/',
+        path: '/all',
         exact: true,
-        main: () => <h2>Home</h2>
+        main: () => <UnAuthAll />
     },
     {
         path: '/vehicles',
