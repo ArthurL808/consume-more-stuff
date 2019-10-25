@@ -3,7 +3,7 @@ exports.up = function (knex) {
     return knex.schema.createTable('items', (table) => {
         table.increments();
         table.string('name').notNullable();
-        table.string('description').notNullable();
+        table.text('description').notNullable();
         table.decimal('price').notNullable();
         table.string('manufacturer');
         table.integer('user_id').notNullable().references('id').inTable('users');
