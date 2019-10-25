@@ -2,6 +2,8 @@ import React from 'react';
 import UnAuthAll from './Components/UnAuthAll';
 import UnAuthVehicles from './Components/UnAuthVehicles';
 import UnAuthComputers from './Components/UnAuthComputers';
+import UnAuthAppliances from './Components/UnAuthAppliances';
+import UnAuthFurniture from './Components/UnAuthFurniture';
 
 export const routes = [
     {
@@ -19,10 +21,10 @@ export const routes = [
     },
     {
         path: '/appliances',
-        main: () => <h2>appliances</h2>
+        main: () => <UnAuthAppliances />
     },
     {
         path: '/furniture',
-        main: () => <h2>furniture</h2>
+        main: () => <UnAuthFurniture />
     }
 ]
