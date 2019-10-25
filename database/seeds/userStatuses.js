@@ -5,8 +5,8 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('userStatuses').insert([
-        {name: 'active'},
-        {name: 'inactive'},
+        {status: 'active'},
+        {status: 'inactive'},
       ]);
     });
 };
