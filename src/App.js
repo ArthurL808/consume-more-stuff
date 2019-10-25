@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+
+import Header from './Components/Header'
+import Sidebar from './Components/Sidebar'
+import MainBody from './Components/MainBody'
 
 function App() {
+  const [isAuth, setAuth] = useState(false)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header isAuth={isAuth} setAuth={setAuth} />
+      <div className="main">
+        <Sidebar isAuth={isAuth} />
+        <MainBody isAuth={isAuth} />
+      </div>
+
     </div>
   );
 }
