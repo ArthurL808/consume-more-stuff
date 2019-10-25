@@ -7,7 +7,8 @@ exports.seed = function (knex) {
       return knex('categories').insert([
         { 'category': 'Hardware' },
         { 'category': 'Software' },
-        { 'category': 'Accessories' }
+        { 'category': 'Accessories' },
+        { 'category': 'Miscellaneous' }
       ]);
     });
 };
