@@ -4,7 +4,7 @@ exports.up = function (knex) {
         table.increments();
         table.string('name').notNullable();
         table.string('description').notNullable();
-        table.integer('price').notNullable();
+        table.decimal('price').notNullable();
         table.string('manufacturer');
         table.integer('user_id').notNullable().references('id').inTable('users');
         table.integer('category_id').notNullable().references('id').inTable('categories');
