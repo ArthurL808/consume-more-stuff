@@ -11,7 +11,7 @@ exports.up = function (knex) {
         table.integer('itemStatus_id').notNullable().references('id').inTable('itemStatuses');
         table.integer('condition_id').notNullable().references('id').inTable('conditions');
         table.timestamps(true, true);
-    })
+    });
 };
 
 exports.down = function (knex) {
