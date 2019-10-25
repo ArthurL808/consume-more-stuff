@@ -1,9 +1,9 @@
 .sidebar {
-  width: 15%;
+  width: fit-content;
   border: 1px solid red;
   height: 90vh;
   margin-top: 10vh;
-  padding-top: 20px;
+  padding: 20px 40px 0 40px;
 
   ul {
     list-style: none;
