@@ -12,19 +12,24 @@ export const routes = [
         main: () => <UnAuthAll />
     },
     {
-        path: '/vehicles',
+        path: '/software',
         main: () => <UnAuthVehicles />
     },
     {
-        path: '/computers',
+        path: '/hardware',
         main: () => <UnAuthComputers />
     },
     {
-        path: '/appliances',
+        path: '/accessories',
         main: () => <UnAuthAppliances />
     },
     {
-        path: '/furniture',
+        path: '/misc',
         main: () => <UnAuthFurniture />
     }
 ]
+
+// Software
+// Hardware
+// Accessories
+// Misc
