@@ -5,5 +5,6 @@ const userRoutes = require('./users/users')
 
 module.exports= {
     items: itemsRoutes,
-    users: userRoutes
+    users: userRoutes,
+    router: router
 }
