@@ -8,8 +8,8 @@ const LocalStrategy = require("passport-local");
 const bcrypt = require("bcryptjs");
 const redis = require("redis");
 const RedisStore = require("connect-redis")(session);
+const api = require('./routes/api/index');
 
-// const PORT = 8080;
 const app = express();
 // const saltRounds = 12;
 
@@ -55,51 +55,51 @@ app.use(
 //     return res.redirect("/login.html");
 //   }
 // }
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
-// passport.use(
-//   new LocalStrategy(function(username, password, done) {
-//     return new User({ username: username })
-//       .fetch()
-//       .then(user => {
-//         console.log("this is the user:", user);
+passport.use(
+  new LocalStrategy(function(username, password, done) {
+    return new User({ username: username })
+      .fetch()
+      .then(user => {
+        console.log("this is the user:", user);
 
-//         if (user === null) {
-//           return done(null, false, { message: "bad username or password" });
-//         } else {
-//           user = user.toJSON();
+        if (user === null) {
+          return done(null, false, { message: "bad username or password" });
+        } else {
+          user = user.toJSON();
 
-//           bcrypt.compare(password, user.password).then(res => {
-//             // Happy route: username exists, password matches
-//             if (res) {
-//               return done(null, user); //this is the user that goes to serialize
-//             }
-//             // Error Route: Username exists, password does not match
-//             else {
-//               return done(null, false, { message: "bad username or password" });
-//             }
-//           });
-//         }
-//       })
-//       .catch(err => {
-//         console.log("error: ", err);
-//         return done(err);
-//       });
-//   })
-// );
+          bcrypt.compare(password, user.password).then(res => {
+            // Happy route: username exists, password matches
+            if (res) {
+              return done(null, user); //this is the user that goes to serialize
+            }
+            // Error Route: Username exists, password does not match
+            else {
+              return done(null, false, { message: "bad username or password" });
+            }
+          });
+        }
+      })
+      .catch(err => {
+        console.log("error: ", err);
+        return done(err);
+      });
+  })
+);
 
-// passport.serializeUser(function(user, done) {
-//   console.log("serializing");
+passport.serializeUser(function(user, done) {
+  console.log("serializing");
 
-//   return done(null, { id: user.id, username: user.username });
-// });
+  return done(null, { id: user.id, username: user.username });
+});
 
-// passport.deserializeUser(function(user, done) {
-//   console.log("deserializing");
-//   console.log(user);
-//   return done(null, user);
-// });
+passport.deserializeUser(function(user, done) {
+  console.log("deserializing");
+  console.log(user);
+  return done(null, user);
+});
 
 // app.use(
 //   "/login",
@@ -142,9 +142,7 @@ app.use(
 //   res.send("logged out");
 // });
 
-app.get("/", (req, res) => {
-  res.send('HOME PAGE')
-});
+app.use('/api/items', api.items)
 
 app.listen(PORT, () => {
   console.log(`server started on PORT:${PORT}`);
