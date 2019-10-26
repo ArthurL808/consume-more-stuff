@@ -6,11 +6,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/test', (req, res) => {
-    return req.db.Item.fetchAll()
+    return req.db.Items.fetchAll()
         .then((results) => {
             res.send(results.toJSON());
-        })
-})
+        });
+});
 
 
 module.exports = router;
