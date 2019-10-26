@@ -1,9 +1,9 @@
 import React from 'react';
-import UnAuthAll from './Components/UnAuthAll';
-import UnAuthSoftware from './Components/UnAuthSoftware';
-import UnAuthAccessories from './Components/UnAuthAccessories';
-import UnAuthMisc from './Components/UnAuthMisc';
-import UnAuthHardware from './Components/UnAuthHardware';
+import UnAuthAll from './Components/UnAuth/UnAuthAll';
+import UnAuthSoftware from './Components/UnAuth/UnAuthSoftware';
+import UnAuthAccessories from './Components/UnAuth/UnAuthAccessories';
+import UnAuthMisc from './Components/UnAuth/UnAuthMisc';
+import UnAuthHardware from './Components/UnAuth/UnAuthHardware';
 
 export const routes = [
     {

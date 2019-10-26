@@ -3,9 +3,9 @@ import './App.scss';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom'
-import Header from './Components/Header'
-import Sidebar from './Components/Sidebar'
-import MainBody from './Components/MainBody'
+import Header from '../Header'
+import Sidebar from '../Sidebar'
+import MainBody from '../MainBody'
 
 
 
