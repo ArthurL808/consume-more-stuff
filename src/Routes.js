@@ -1,8 +1,8 @@
 import React from 'react';
 import UnAuthAll from './Components/UnAuthAll';
 import UnAuthSoftware from './Components/UnAuthSoftware';
-import UnAuthAppliances from './Components/UnAuthAppliances';
-import UnAuthFurniture from './Components/UnAuthFurniture';
+import UnAuthAccessories from './Components/UnAuthAccessories';
+import UnAuthMisc from './Components/UnAuthMisc';
 import UnAuthHardware from './Components/UnAuthHardware';
 
 export const routes = [
@@ -21,11 +21,11 @@ export const routes = [
     },
     {
         path: '/accessories',
-        main: () => <UnAuthAppliances />
+        main: () => <UnAuthAccessories />
     },
     {
         path: '/misc',
-        main: () => <UnAuthFurniture />
+        main: () => <UnAuthMisc />
     }
 ]
 
