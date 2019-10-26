@@ -3,7 +3,7 @@ const router = express.Router()
 const itemsRoutes = require('./items/items')
 const userRoutes = require('./users/users')
 
-module.exports= {
+module.exports = {
     items: itemsRoutes,
     users: userRoutes,
     router: router
