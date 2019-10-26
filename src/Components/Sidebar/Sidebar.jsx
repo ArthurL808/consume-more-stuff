@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import styles from './Sidebar.module.scss';
 import { Link } from 'react-router-dom'
 
-const Sidebar = ({ isAuth, view, setView }) => {
+const Sidebar = ({ isAuth }) => {
 
     return (
         <div className={styles.sidebar}>
@@ -23,8 +23,6 @@ const Sidebar = ({ isAuth, view, setView }) => {
                         <button><Link to="/all">ALL</Link></button>
                     </Fragment>
                 }
-
-
             </ul>
         </div>
     )
