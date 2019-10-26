@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UnAuthComputers = () => {
+const UnAuthHardware = () => {
     return (
         <div>
             <h1>Computers component</h1>
@@ -8,4 +8,4 @@ const UnAuthComputers = () => {
     )
 }
 
-export default UnAuthComputers;
+export default UnAuthHardware;

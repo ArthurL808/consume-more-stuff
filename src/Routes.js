@@ -1,9 +1,9 @@
 import React from 'react';
-import UnAuthAll from './Components/UnAuthAll';
-import UnAuthVehicles from './Components/UnAuthVehicles';
-import UnAuthComputers from './Components/UnAuthComputers';
-import UnAuthAppliances from './Components/UnAuthAppliances';
-import UnAuthFurniture from './Components/UnAuthFurniture';
+import UnAuthAll from './Components/UnAuth/UnAuthAll';
+import UnAuthSoftware from './Components/UnAuth/UnAuthSoftware';
+import UnAuthAccessories from './Components/UnAuth/UnAuthAccessories';
+import UnAuthMisc from './Components/UnAuth/UnAuthMisc';
+import UnAuthHardware from './Components/UnAuth/UnAuthHardware';
 
 export const routes = [
     {
@@ -12,19 +12,24 @@ export const routes = [
         main: () => <UnAuthAll />
     },
     {
-        path: '/vehicles',
-        main: () => <UnAuthVehicles />
+        path: '/software',
+        main: () => <UnAuthSoftware />
     },
     {
-        path: '/computers',
-        main: () => <UnAuthComputers />
+        path: '/hardware',
+        main: () => <UnAuthHardware />
     },
     {
-        path: '/appliances',
-        main: () => <UnAuthAppliances />
+        path: '/accessories',
+        main: () => <UnAuthAccessories />
     },
     {
-        path: '/furniture',
-        main: () => <UnAuthFurniture />
+        path: '/misc',
+        main: () => <UnAuthMisc />
     }
 ]
+
+// Software
+// Hardware
+// Accessories
+// Misc
