@@ -11,6 +11,17 @@ header {
   left: 0;
 }
 
+.logo {
+  height: 50px;
+  width: 50px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 .right {
   span {
     margin-right: 10px;
