@@ -1,17 +1,20 @@
-import React from 'react';
-import styles from './UnAuthAll.module.scss';
+import React, { useEffect, useState } from 'react';
+import syles from './UnAuthAll.module.scss';
+import { useDispatch } from 'react-redux';
+import { loadItemsAsync } from '../../../actions';
 
 const UnAuthAll = () => {
-    const categories = ['Vehicles', 'Computers', 'Appliances', 'Furniture'];
+    const [products, setProducts] = useState();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(loadItemsAsync())
+    }, [dispatch])
+
 
     return (
         <div>
-            {categories.map(category => (
-                <div className={styles.top_items} key={category}>
-                    <h2>Top 10 items in {category}</h2>
-
-                </div>
-            ))}
+            {console.log(products)}
         </div>
     )
 }
