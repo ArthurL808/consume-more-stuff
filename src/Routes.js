@@ -6,6 +6,7 @@ import UnAuthMisc from './Components/UnAuth/UnAuthMisc';
 import UnAuthHardware from './Components/UnAuth/UnAuthHardware';
 import AuthNewItem from './Components/Auth/AuthNewItem';
 import AuthHome from './Components/Auth/AuthHome';
+import AuthMessages from './Components/Auth/AuthMessages';
 
 export const routes = [
     {
@@ -36,5 +37,9 @@ export const routes = [
     {
         path: '/new',
         main: () => <AuthNewItem />
+    },
+    {
+        path: '/messages',
+        main: () => <AuthMessages />
     }
 ]
