@@ -40,6 +40,11 @@ class AuthNewItem extends Component {
           <div>
             {/* THIS ONE SHOULD BE A DROP DOWN */}
             <h3>Condition</h3>
+            <select onChange={(e) => console.log(e.target.value)}>
+              <option>new</option>
+              <option>good</option>
+              <option>used</option>
+            </select>
           </div>
 
           <div>
