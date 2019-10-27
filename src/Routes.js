@@ -38,8 +38,3 @@ export const routes = [
         main: () => <AuthNewItem />
     }
 ]
-
-// Software
-// Hardware
-// Accessories
-// Misc
