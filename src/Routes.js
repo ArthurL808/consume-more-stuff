@@ -4,6 +4,7 @@ import UnAuthSoftware from './Components/UnAuth/UnAuthSoftware';
 import UnAuthAccessories from './Components/UnAuth/UnAuthAccessories';
 import UnAuthMisc from './Components/UnAuth/UnAuthMisc';
 import UnAuthHardware from './Components/UnAuth/UnAuthHardware';
+import ItemDetails from './Components/ItemDetails';
 
 export const routes = [
     {
@@ -26,6 +27,10 @@ export const routes = [
     {
         path: '/misc',
         main: () => <UnAuthMisc />
+    },
+    {
+        path: '/:itemName',
+        main: () => <ItemDetails />
     }
 ]
 
