@@ -12,7 +12,7 @@ const Sidebar = ({ isAuth }) => {
                     <Fragment>
                         <li><Link to="/home">Home</Link></li>
                         <li><Link to="/messages">Messages</Link></li>
-                        <li>Setting</li>
+                        <li><Link to="/settings">Setting</Link></li>
                         <button><Link to="/new">new</Link></button>
                     </Fragment> :
                     <Fragment>
