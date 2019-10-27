@@ -59,7 +59,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(
-  new LocalStrategy(function(username, password, done) {
+  new LocalStrategy(function (username, password, done) {
     return new User({ username: username })
       .fetch()
       .then(user => {
@@ -89,13 +89,13 @@ passport.use(
   })
 );
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   console.log("serializing");
 
   return done(null, { id: user.id, username: user.username });
 });
 
-passport.deserializeUser(function(user, done) {
+passport.deserializeUser(function (user, done) {
   console.log("deserializing");
   console.log(user);
   return done(null, user);
