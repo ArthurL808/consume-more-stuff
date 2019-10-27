@@ -142,7 +142,7 @@ passport.deserializeUser(function(user, done) {
 //   res.send("logged out");
 // });
 
-// app.use('/api/items', api.items)
+app.use('/api/items', api.items)
 app.use('/api/users', api.users)
 
 app.listen(PORT, () => {
