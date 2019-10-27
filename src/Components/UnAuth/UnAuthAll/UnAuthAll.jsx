@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import syles from './UnAuthAll.module.scss';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import styles from './UnAuthAll.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
 import { loadItemsAsync } from '../../../actions';
+import reducer from '../../../reducers';
 
 const UnAuthAll = () => {
-    const [products, setProducts] = useState();
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(loadItemsAsync())
-    }, [dispatch])
-
+    const items = useSelector(state => state.items)
 
     return (
         <div>
-            {console.log(products)}
+            {console.log(items)}
         </div>
     )
 }
