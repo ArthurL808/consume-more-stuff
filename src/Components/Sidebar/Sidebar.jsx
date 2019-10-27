@@ -10,10 +10,10 @@ const Sidebar = ({ isAuth }) => {
             <ul className={styles.sidebar_links}>
                 {isAuth ?
                     <Fragment>
-                        <li>Home</li>
+                        <li><Link to="/home">Home</Link></li>
                         <li>Messages</li>
                         <li>Setting</li>
-                        <button>new</button>
+                        <button><Link to="/new">new</Link></button>
                     </Fragment> :
                     <Fragment>
                         <li><Link to="/software">Software</Link></li>
