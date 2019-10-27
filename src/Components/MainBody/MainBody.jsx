@@ -4,7 +4,7 @@ import styles from "./MainBody.module.scss";
 import Auth from "../Auth";
 import UnAuth from "../UnAuth";
 
-const MainBody = ({ isAuth, view }) => {
+const MainBody = ({ isAuth }) => {
   return (
     <div className={styles.main_body}>
       {/*ALL CONTENT FOR THE BODY SECTION GOES HERE*/}
