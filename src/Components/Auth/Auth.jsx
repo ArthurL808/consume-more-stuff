@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Auth.module.scss";
-import AuthHome from "./AuthHome";
+import { Route } from 'react-router-dom'
+import { routes } from '../../Routes';
 
 class Auth extends Component {
   state = {};
@@ -10,7 +11,14 @@ class Auth extends Component {
         <div className={styles.auth_page}>
           <h1>Logged In</h1>
 
-          <AuthHome></AuthHome>
+          {routes.map(route => (
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+              component={route.main}
+            />
+          ))}
         </div>
       </>
     );
