@@ -1,9 +1,17 @@
+@import "../../index.scss";
+
 .sidebar {
   width: fit-content;
-  border: 1px solid red;
+  background: $black;
   height: 90vh;
   margin-top: 10vh;
   padding: 20px 40px 0 40px;
+
+  h3 {
+    color: $white;
+    font-size: 2rem;
+    margin: 0;
+  }
 
   ul {
     list-style: none;
@@ -11,6 +19,10 @@
     li {
       margin: 10px 0;
       font-size: 1.5rem;
+
+      a {
+        color: $teal;
+      }
     }
   }
 }
