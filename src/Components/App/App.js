@@ -3,24 +3,23 @@ import './App.scss';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom'
-import Header from './Components/Header'
-import Sidebar from './Components/Sidebar'
-import MainBody from './Components/MainBody'
+import Header from '../Header'
+import Sidebar from '../Sidebar'
+import MainBody from '../MainBody'
 
 
 
 
 function App() {
   const [isAuth, setAuth] = useState(false);
-  const [view, setView] = useState('');
 
   return (
     <Router>
       <div className="App">
         <Header isAuth={isAuth} setAuth={setAuth} />
         <div className="main">
-          <Sidebar isAuth={isAuth} view={view} setView={setView} />
-          <MainBody isAuth={isAuth} view={view} />
+          <Sidebar isAuth={isAuth} />
+          <MainBody isAuth={isAuth} />
         </div>
       </div>
     </Router>
