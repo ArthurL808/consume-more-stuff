@@ -5,6 +5,7 @@ import UnAuthAccessories from './Components/UnAuth/UnAuthAccessories';
 import UnAuthMisc from './Components/UnAuth/UnAuthMisc';
 import UnAuthHardware from './Components/UnAuth/UnAuthHardware';
 import AuthNewItem from './Components/Auth/AuthNewItem';
+import AuthHome from './Components/Auth/AuthHome';
 
 export const routes = [
     {
@@ -27,6 +28,10 @@ export const routes = [
     {
         path: '/misc',
         main: () => <UnAuthMisc />
+    },
+    {
+        path: '/home',
+        main: () => <AuthHome />
     },
     {
         path: '/new',
