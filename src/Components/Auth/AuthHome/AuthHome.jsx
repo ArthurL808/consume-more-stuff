@@ -1,12 +1,15 @@
 import React, { Component } from "react";
+import Item from "./AuthHomePending";
 import styles from "./AuthHome.module.scss";
 
 class AuthHome extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
     this.state = {};
   }
 
+  //WORK ON THIS ONCE BACKEND IS CONNECTED.
   render() {
     return (
       <>
@@ -14,24 +17,22 @@ class AuthHome extends Component {
           <div className={styles.auth_home_pending}>
             <h1>Pending Items</h1>
             <ul>
-              <li>
-                <div className={styles.pending_image}>Image here</div>
-                <br />
-                Name: Price: <br />
-                Description: <br />
-              </li>
-              {/* ONCE SEEDS ARE DONE I CAN WORK ON THIS I THINKKKKKKKKK 
-              
-              {this.props.items.map(item => {
-              return (
-                <Item
-                  key={item.id}
-                  name={item.name}
-                  description={item.description}
-                  price={item.price}
-                />
-              );
-            })} */}
+              <div className={styles.pending_image}>Image here</div>
+              <br />
+              Name: Price: <br />
+              Description: <br />
+              {/* {this.props.items.map(item => {
+          return (
+            <span key={item.id}>
+              <Item
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                condition={item.condition}
+              />
+            </span>
+          );
+        })} */}
             </ul>
           </div>
 

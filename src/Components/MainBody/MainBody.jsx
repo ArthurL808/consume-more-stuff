@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./MainBody.module.scss";
-import Auth from "../Auth";
 // IMPORT ALL BODY COMPOENENTS HERE
+import Auth from "../Auth";
 import UnAuth from "../UnAuth";
 
 const MainBody = ({ isAuth, view }) => {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./Auth.module.scss";
-import AuthHome from "../AuthHome";
+import AuthHome from "./AuthHome";
 
 class Auth extends Component {
   state = {};
