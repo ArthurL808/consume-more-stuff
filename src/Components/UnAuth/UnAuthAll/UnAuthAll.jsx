@@ -1,17 +1,16 @@
 import React from 'react';
 import styles from './UnAuthAll.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadItemsAsync } from '../../../actions';
+import reducer from '../../../reducers';
 
 const UnAuthAll = () => {
-    const categories = ['Vehicles', 'Computers', 'Appliances', 'Furniture'];
+
+    const items = useSelector(state => state.items)
 
     return (
         <div>
-            {categories.map(category => (
-                <div className={styles.top_items} key={category}>
-                    <h2>Top 10 items in {category}</h2>
-
-                </div>
-            ))}
+            {console.log(items)}
         </div>
     )
 }
