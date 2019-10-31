@@ -1,69 +1,27 @@
 import React, { Component } from "react";
-import Item from "./AuthHomePending";
-import styles from "./AuthHome.module.scss";
+// import styles from "./AuthHome.module.scss";
+import { connect } from "react-redux";
+import { loadItemsAsync } from "../../../actions";
 
 class AuthHome extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
+  }
+  componentDidMount() {
+    this.props.dispatch(loadItemsAsync());
   }
 
-  //WORK ON THIS ONCE BACKEND IS CONNECTED.
   render() {
     return (
-      <>
-        <div className={styles.auth_home}>
-          <div className={styles.auth_home_pending}>
-            <h1>Pending Items</h1>
-            <ul>
-              <div className={styles.pending_image}>Image here</div>
-              <br />
-              Name: Price: <br />
-              Description: <br />
-              {/* {this.props.items.map(item => {
-          return (
-            <span key={item.id}>
-              <Item
-                name={item.name}
-                description={item.description}
-                price={item.price}
-                condition={item.condition}
-              />
-            </span>
-          );
-        })} */}
-            </ul>
-          </div>
-
-          <div className={styles.auth_home_published}>
-            <h1>Published</h1>
-
-            <ul>
-              <li>
-                <div className={styles.published_image}>Image here</div>
-                <br />
-                Name: Price: <br />
-                Description: <br />
-              </li>
-            </ul>
-          </div>
-
-          <div className={styles.auth_home_sold}>
-            <h1>Sold</h1>
-            <ul>
-              <li>
-                <div className={styles.sold_image}>Image here</div>
-                <br />
-                Name: Price: <br />
-                Description: <br />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </>
+      <div>
+        {this.props.items &&
+          this.props.items.map(item => <h1 key={item.id}>{item.name}</h1>)}
+      </div>
     );
   }
 }
+const mapStateToProps = state => {
+  return { items: state.items };
+};
 
-export default AuthHome;
+export default connect(mapStateToProps)(AuthHome);
