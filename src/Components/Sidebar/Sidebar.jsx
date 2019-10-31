@@ -6,7 +6,7 @@ const Sidebar = ({ isAuth }) => {
 
     return (
         <div className={styles.sidebar}>
-            {!isAuth && <h3>Home Categories</h3>}
+            {!isAuth && <h3>Home</h3>}
             <ul className={styles.sidebar_links}>
                 {isAuth ?
                     <Fragment>

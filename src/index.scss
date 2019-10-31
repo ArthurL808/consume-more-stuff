@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Chakra+Petch:300,600|Press+Start+2P&display=swap");
+
+// Variables
+$body-font: "Chakra Petch", sans-serif;
+$header-font: "Press Start 2P", cursive;
+$white: #f8fbf9;
+$teal: #45d6b3;
+$black: #273436;
+$pink: #f75162;
+
 html {
   box-sizing: border-box;
 }
@@ -6,13 +16,36 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  font-family: $body-font;
+  color: $black;
 }
 
 body {
   margin: 0;
   padding: 0;
+  font-family: $body-font;
+  background: $white;
+  color: $black;
 }
 
 ul {
   padding: 0;
+}
+
+h1,
+h2 {
+  font-family: $header-font;
+  text-transform: uppercase;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: $body-font;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
 }
