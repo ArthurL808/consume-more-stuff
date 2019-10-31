@@ -7,11 +7,12 @@ export const loadItemsAsync = () => async dispatch => {
             return response.json();
         })
         .then(items => {
-            console.log(items)
             dispatch({
                 type: LOAD_ITEMS,
                 payload: items
             })
+            // console.log(items)
+            return items;
         })
         .catch(err => {
             console.log(err.message)
