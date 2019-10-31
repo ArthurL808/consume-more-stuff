@@ -14,7 +14,8 @@ class AuthHome extends Component {
   render() {
     return (
       <div>
-        {this.props.items && this.props.items.map(item => <h1>{item.name}</h1>)}
+        {this.props.items &&
+          this.props.items.map(item => <h1 key={item.id}>{item.name}</h1>)}
       </div>
     );
   }
