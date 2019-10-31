@@ -1,6 +1,10 @@
 import { LOAD_ITEMS, LOAD_USERS } from "../actions";
 
-const reducer = (state = [], action) => {
+const initialState = {
+  items: []
+};
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_ITEMS:
       // console.log(action);
