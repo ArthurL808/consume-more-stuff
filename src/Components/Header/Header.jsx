@@ -11,7 +11,9 @@ const Header = ({ isAuth, setAuth, setSidebarOn, sidebarOn }) => {
             <div className={styles.right}>
                 {isAuth && <span>Hello, User</span>}
 
-                <button className={styles.toggle_sidebar} onClick={() => setSidebarOn(!sidebarOn)}>toggle</button>
+                <button className={styles.toggle_sidebar} onClick={() => setSidebarOn(!sidebarOn)}>
+                    {sidebarOn ? 'close' : 'menu'}
+                </button>
 
                 <button onClick={() => setAuth(!isAuth)} className={styles.log_btn}>
                     {isAuth ?
