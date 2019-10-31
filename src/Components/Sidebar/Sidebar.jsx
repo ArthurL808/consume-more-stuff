@@ -1,11 +1,17 @@
 import React, { Fragment } from 'react';
 import styles from './Sidebar.module.scss';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { animated, useSpring } from 'react-spring';
 
-const Sidebar = ({ isAuth }) => {
+const Sidebar = ({ isAuth, sidebarOn, setSidebarOn }) => {
+
+    const slideIn = useSpring({
+        transform: sidebarOn ? 'translateY(0)' : 'translateY(-100px)',
+        opacity: sidebarOn ? 1 : 0
+    })
 
     return (
-        <div className={styles.sidebar}>
+        <animated.div className={styles.sidebar} style={slideIn}>
             {!isAuth && <h3>Home</h3>}
             <ul className={styles.sidebar_links}>
                 {isAuth ?
@@ -24,7 +30,7 @@ const Sidebar = ({ isAuth }) => {
                     </Fragment>
                 }
             </ul>
-        </div>
+        </animated.div>
     )
 }
 

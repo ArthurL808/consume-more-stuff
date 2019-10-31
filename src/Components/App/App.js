@@ -11,6 +11,7 @@ import { loadItemsAsync } from '../../actions';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
+  const [sidebarOn, setSidebarOn] = useState(false);
 
   // const dispatch = useDispatch();
 
@@ -23,7 +24,8 @@ function App() {
       <div className="App">
         <Header isAuth={isAuth} setAuth={setAuth} />
         <div className="main">
-          <Sidebar isAuth={isAuth} />
+          <button onClick={() => setSidebarOn(true)}>toggle</button>
+          <Sidebar isAuth={isAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
           <MainBody isAuth={isAuth} />
         </div>
       </div>
