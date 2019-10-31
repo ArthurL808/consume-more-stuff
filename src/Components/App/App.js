@@ -8,9 +8,21 @@ import Sidebar from '../Sidebar';
 import MainBody from '../MainBody';
 import { useDispatch } from 'react-redux';
 import { loadItemsAsync } from '../../actions';
+import styles from './App.module.scss'
 
 function App() {
   const [isAuth, setAuth] = useState(false);
+  const [sidebarOn, setSidebarOn] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => width > 1024 ? setSidebarOn(true) : setSidebarOn(false);
+  }, [width])
 
   // const dispatch = useDispatch();
 
@@ -21,9 +33,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header isAuth={isAuth} setAuth={setAuth} />
+        <Header isAuth={isAuth} setAuth={setAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         <div className="main">
-          <Sidebar isAuth={isAuth} />
+          <Sidebar isAuth={isAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
           <MainBody isAuth={isAuth} />
         </div>
       </div>
