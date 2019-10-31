@@ -6,13 +6,16 @@ import { animated, useSpring } from 'react-spring';
 const Sidebar = ({ isAuth, sidebarOn, setSidebarOn }) => {
 
     const slideIn = useSpring({
-        transform: sidebarOn ? 'translateY(0)' : 'translateY(-100px)',
-        opacity: sidebarOn ? 1 : 0
+        transform: sidebarOn ? 'translateY(0)' : 'translateY(-100%)',
     })
 
     return (
         <animated.div className={styles.sidebar} style={slideIn}>
-            {!isAuth && <h3>Home</h3>}
+            <div className={styles.top_container}>
+                {!isAuth && <h3>Home</h3>}
+                <button className={styles.close_sidebar} onClick={() => setSidebarOn(false)}>close</button>
+            </div>
+
             <ul className={styles.sidebar_links}>
                 {isAuth ?
                     <Fragment>

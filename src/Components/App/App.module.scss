@@ -1,0 +1,13 @@
+@import "../../index.scss";
+
+.toggle_sidebar {
+  position: fixed;
+  top: 14vh;
+  right: 2.5%;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .toggle_sidebar {
+    display: none;
+  }
+}
