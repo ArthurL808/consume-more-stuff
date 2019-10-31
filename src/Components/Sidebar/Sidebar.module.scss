@@ -8,17 +8,11 @@
   top: 10vh;
   padding: 20px 40px 0 40px;
 
-  .top_container {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   h3 {
     color: $white;
     font-size: 2rem;
     margin: 0;
+    text-align: center;
   }
 
   ul {
@@ -46,14 +40,11 @@
     top: 10vh;
     padding: 20px 40px 0 40px;
 
-    .close_sidebar {
-      display: none;
-    }
-
     h3 {
       color: $white;
       font-size: 2rem;
       margin: 0;
+      text-align: left;
     }
 
     ul {

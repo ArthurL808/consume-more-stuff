@@ -33,9 +33,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header isAuth={isAuth} setAuth={setAuth} />
+        <Header isAuth={isAuth} setAuth={setAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         <div className="main">
-          <button className={styles.toggle_sidebar} onClick={() => setSidebarOn(true)}>toggle</button>
           <Sidebar isAuth={isAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
           <MainBody isAuth={isAuth} />
         </div>

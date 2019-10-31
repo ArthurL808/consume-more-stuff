@@ -17,6 +17,16 @@ header {
   box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.43);
 }
 
+.toggle_sidebar {
+  margin-right: 20px;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .toggle_sidebar {
+    display: none;
+  }
+}
+
 .logo {
   height: 50px;
   width: 50px;

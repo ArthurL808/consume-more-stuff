@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.module.scss'
 
-const Header = ({ isAuth, setAuth }) => {
+const Header = ({ isAuth, setAuth, setSidebarOn, sidebarOn }) => {
     return (
         <header>
             <div className={styles.logo}>
@@ -10,6 +10,8 @@ const Header = ({ isAuth, setAuth }) => {
 
             <div className={styles.right}>
                 {isAuth && <span>Hello, User</span>}
+
+                <button className={styles.toggle_sidebar} onClick={() => setSidebarOn(!sidebarOn)}>toggle</button>
 
                 <button onClick={() => setAuth(!isAuth)} className={styles.log_btn}>
                     {isAuth ?

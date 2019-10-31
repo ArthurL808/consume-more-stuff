@@ -11,10 +11,7 @@ const Sidebar = ({ isAuth, sidebarOn, setSidebarOn }) => {
 
     return (
         <animated.div className={styles.sidebar} style={slideIn}>
-            <div className={styles.top_container}>
-                {!isAuth && <h3>Home</h3>}
-                <button className={styles.close_sidebar} onClick={() => setSidebarOn(false)}>close</button>
-            </div>
+            {!isAuth && <h3>Home</h3>}
 
             <ul className={styles.sidebar_links}>
                 {isAuth ?
