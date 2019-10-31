@@ -4,10 +4,25 @@ const router = express.Router();
 //localhost:8080/api/items
 router.get('/', (req, res) => {
     return req.db.Items.fetchAll()
-        .then((results) => {
-            res.send(results.toJSON());
+        .then((items) => {
+            res.json(items);
+        })
+        .catch((error) => {
+            console.log('Error: ', error);
+            res.status(500).send({ message: 'Error fetching all items.' })
         });
 });
+router.get('/:id', (req, res) => {
+    return req.db.Items.where({ id: req.params.id })
+        .fetch()
+        .then((item) => {
+            res.json(item);
+        })
+        .catch((error) => {
+            console.log('Error: ', error);
+            res.status(400).send({ message: 'Error fetching item.' })
+        })
+})
 
 router.post('/new', (req, res) => {
     let newItem = {
