@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react';
-import styles from './Sidebar.module.scss';
+import styles from './TopBar.module.scss';
 import { Link } from 'react-router-dom';
+import { animated, useSpring } from 'react-spring';
 
-const Sidebar = ({ isAuth }) => {
+const TopBar = ({ isAuth, sidebarOn }) => {
 
+    const slideIn = useSpring({
+        transform: sidebarOn ? 'translateY(0)' : 'translateY(-100%)',
+    })
 
     return (
-        <div className={styles.sidebar}>
+        <animated.div className={styles.topbar} style={slideIn}>
             {!isAuth && <h3>Home</h3>}
 
             <ul className={styles.sidebar_links}>
@@ -26,8 +30,8 @@ const Sidebar = ({ isAuth }) => {
                     </Fragment>
                 }
             </ul>
-        </div>
+        </animated.div>
     )
 }
 
-export default Sidebar;
+export default TopBar;
