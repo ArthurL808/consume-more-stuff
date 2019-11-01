@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import {
   BrowserRouter as Router,
@@ -13,22 +13,7 @@ import styles from './App.module.scss'
 function App() {
   const [isAuth, setAuth] = useState(false);
   const [sidebarOn, setSidebarOn] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => width > 1024 ? setSidebarOn(true) : setSidebarOn(false);
-  }, [width])
-
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(loadItemsAsync());
-  // })
 
   return (
     <Router>
