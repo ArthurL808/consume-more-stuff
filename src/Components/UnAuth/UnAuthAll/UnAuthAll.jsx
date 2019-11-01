@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 // import styles from './UnAuthAll.module.scss';
 import { connect } from 'react-redux';
 import { loadItemsAsync } from '../../../actions';
+import Filter from '../../Filter'
 
 const UnAuthAll = (props) => {
 
@@ -13,9 +14,7 @@ const UnAuthAll = (props) => {
 
     return (
         <div>
-            {items && (items.map(item => (
-                <h1>{item.name}</h1>
-            )))}
+            <Filter items={items} filter={'all'} />
         </div>
     )
 }
