@@ -1,0 +1,38 @@
+@import "../../index.scss";
+
+.topbar {
+    width: 100%;
+    background: $black;
+    height: fit-content;
+    position: fixed;
+    top: 10vh;
+    padding: 20px 40px 0 40px;
+
+    h3 {
+        color: $white;
+        font-size: 2rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+
+        li {
+            margin: 10px 0;
+            font-size: 0.75rem;
+
+            a {
+                color: $teal;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-medium) {
+    .topbar {
+        display: none;
+    }
+}

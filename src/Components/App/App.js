@@ -6,9 +6,8 @@ import {
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import MainBody from '../MainBody';
-import { useDispatch } from 'react-redux';
-import { loadItemsAsync } from '../../actions';
-import styles from './App.module.scss'
+import TopBar from '../TopBar';
+
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -20,7 +19,8 @@ function App() {
       <div className="App">
         <Header isAuth={isAuth} setAuth={setAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         <div className="main">
-          <Sidebar isAuth={isAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
+          <Sidebar isAuth={isAuth} />
+          <TopBar sidebarOn={sidebarOn} />
           <MainBody isAuth={isAuth} />
         </div>
       </div>
