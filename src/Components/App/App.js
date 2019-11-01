@@ -20,7 +20,7 @@ function App() {
         <Header isAuth={isAuth} setAuth={setAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         <div className="main">
           <Sidebar isAuth={isAuth} />
-          <TopBar sidebarOn={sidebarOn} />
+          <TopBar sidebarOn={sidebarOn} isAuth={isAuth} />
           <MainBody isAuth={isAuth} />
         </div>
       </div>
