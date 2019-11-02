@@ -1,13 +1,23 @@
 const express = require('express');
 const router = express.Router();
+const upload = require('../../../services/file-upload')
+const singleUpload = upload.single('image')
 
 //localhost:8080/api/items
 router.get('/', (req, res) => {
-    return req.db.Items.fetchAll()
+    return req.db.Items.fetchAll({withRelated: ['users','categories','itemStatuses','conditions']})
         .then((results) => {
             res.send(results.toJSON());
         });
 });
+
+router.post('/image-upload', (req,res) =>{
+
+    singleUpload(req,res, (err)=>{
+
+    return res.json({'imageUrl': req.file.location})
+    })
+})
 
 router.post('/new', (req, res) => {
     let newItem = {
