@@ -5,7 +5,7 @@ const singleUpload = upload.single('image')
 
 //localhost:8080/api/items
 router.get('/', (req, res) => {
-    return req.db.Items.fetchAll({withRelated: ['users','categories','itemStatuses','conditions']})
+    return req.db.Items.fetchAll({withRelated: ['user','category','itemStatus','condition']})
         .then((results) => {
             res.send(results.toJSON());
         });
