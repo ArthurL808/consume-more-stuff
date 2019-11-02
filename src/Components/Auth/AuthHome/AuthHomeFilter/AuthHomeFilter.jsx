@@ -1,51 +1,43 @@
-// import React, { Component } from "react";
-// // import styles from "./AuthHomeFilter.scss";
-// import items from "../AuthHome";
+import React, { Component } from "react";
+// import styles from "./AuthHomeFilter.scss";
+import { Link } from "react-router-dom";
 
-// //WORK ON THIS ONCE BACKEND IS CONNECTED
+class AuthHomeFilter extends Component {
+  getStatus(e) {
+    if (e === 1) {
+      return <h3>Pending</h3>;
+    } else if (e === 2) {
+      return <h3>Published</h3>;
+    } else if (e === 3) {
+      return <h3>Sold</h3>;
+    }
+  }
 
-// class AuthHomeFilter extends Component {
-//   render() {
-//     return (
-//       <>
-//         <div>
-//           <div>
-//             <h1>{this.props.filter}</h1>
-//             <ul>
-//               <div className={styles.pending_image}>Image here</div>
-//               <br />
-//               {items.map(
-//                 (item, index) =>
-//                   item.status === this.props.filter && (
-//                     <div key={index}>
-//                       <h4>{item.title}</h4>
-//                       <p>{item.status}</p>
-//                     </div>
-//                   )
-//               )}
-//             </ul>
-//           </div>
-//         </div>
-//       </>
-//     );
-//   }
-// }
+  //link to item needs to be fixed
 
-// export default AuthHomeFilter;
+  render() {
+    return (
+      <>
+        {this.getStatus(this.props.filter)}
+        <div>
+          {this.props.items &&
+            this.props.items.map(
+              item =>
+                item.itemStatus_id === this.props.filter && (
+                  <div key={item.id}>
+                    <Link to="/home">
+                      <img src="https://placekitten.com/200/150" alt="Meow" />
+                    </Link>
+                    <h3>{item.name}</h3>
+                    <p>{item.manufacturer}</p>
+                    <p>{item.price}</p>
+                  </div>
+                )
+            )}
+        </div>
+      </>
+    );
+  }
+}
 
-// // const Item = function(props) {
-// //   console.log("PROPS", props);
-// //   return (
-// //     <div>
-// //       <div>Name: {props.name}</div>
-
-// //       <div>Description: {props.description}</div>
-
-// //       <div>Price: {props.price}</div>
-
-// //       <div>Condition: {props.condition}</div>
-// //     </div>
-// //   );
-// // };
-
-// // export default (Item);
+export default AuthHomeFilter;
