@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { loadItemsAsync } from '../../../actions';
 import Filter from '../../Filter'
-// import ProductRow from '../../ProductRow';
 
 const UnAuthAll = (props) => {
 
@@ -13,11 +12,11 @@ const UnAuthAll = (props) => {
         dispatch(loadItemsAsync())
     }, [dispatch])
 
+
+
     return (
         <div>
-            {items && items.map(item =>
-                <Filter items={items} filter={item.manufacturer} />
-            )}
+            <Filter items={items} filter={'all'} />
         </div>
     )
 }
@@ -29,4 +28,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(UnAuthAll);
-
