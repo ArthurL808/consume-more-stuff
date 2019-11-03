@@ -1,0 +1,58 @@
+@import "../../../../index.scss";
+
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  button {
+    display: grid;
+    place-items: center;
+    height: 30px;
+    width: fit-content;
+    padding: 0 20px;
+    position: absolute;
+    top: calc(50% - 15px);
+    z-index: 10;
+
+    &.arrowLeft {
+      left: 2.5%;
+    }
+    &.arrowRight {
+      right: 2.5%;
+    }
+  }
+  .prodList {
+    display: flex;
+    & > div {
+      margin: 0 20px;
+      width: 300px;
+      .imageContainer {
+        height: 200px;
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          transition: all 0.2s ease-out;
+        }
+      }
+      &:hover {
+        img {
+          transition: all 0.3s ease-in;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  .container {
+    width: calc(100% - 15vw);
+  }
+}
