@@ -6,22 +6,6 @@ import AuthSettings from './Components/Auth/AuthSettings';
 
 export const routes = [
     {
-        path: '/all',
-        exact: true,
-    },
-    {
-        path: '/software'
-    },
-    {
-        path: '/hardware'
-    },
-    {
-        path: '/accessories'
-    },
-    {
-        path: '/misc'
-    },
-    {
         path: '/home',
         main: () => <AuthHome />
     },

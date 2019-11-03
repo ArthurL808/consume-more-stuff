@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './UnAuth.module.scss'
 import { useLocation } from 'react-router-dom'
-import { routes } from '../../Routes';
 import { connect } from 'react-redux';
 import { loadItemsAsync } from '../../actions';
 import Filter from '../Filter';
