@@ -1,16 +1,46 @@
+@import '../../index.scss';
+
 .container {
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 
     .product_card {
 
-        img {
-            height: 100%;
+        .img_container {
+            height: 200px;
             width: 100%;
-            object-fit: cover;
+            overflow: hidden;
+            position: relative;
+
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                transition: all .2s ease-out;
+            }
         }
+
+        &:hover {
+            h4 {
+                color: $pink;
+            }
+
+            img {
+                transform: scale(1.1);
+                transition: all .3s ease-in;
+            }
+        }
+
+
+
+
     }
+
 }
