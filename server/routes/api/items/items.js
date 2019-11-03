@@ -11,20 +11,14 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/image-upload', (req,res) =>{
 
-    singleUpload(req,res, (err)=>{
-
-    return res.json({'imageUrl': req.file.location})
-    })
-})
-
-router.post('/new', (req, res) => {
+router.post('/new',singleUpload, (req, res) => {
     let newItem = {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
         manufacturer: req.body.manufacturer,
+        imageUrl: req.file.location,
         user_id: 1,
         category_id: 1,
         itemStatus_id: 1,
