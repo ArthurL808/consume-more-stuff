@@ -3,5 +3,13 @@
 .main_body {
   margin-top: 10vh;
   width: 100%;
-  margin-left: 15vw;
+}
+
+
+
+@media(min-width: $breakpoint-medium) {
+  .main_body {
+    margin-left: 15vw;
+  }
+
 }

@@ -8,6 +8,7 @@ const Filter = ({ filter, items }) => {
     }
 
 
+
     return (
         <div>
             <h1>{filter}</h1>
@@ -22,6 +23,7 @@ const Filter = ({ filter, items }) => {
                             <p>{item.status}</p>
                         </div>
                 )}
+
             </div>
         </div>
     );
