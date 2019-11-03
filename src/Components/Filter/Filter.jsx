@@ -16,6 +16,7 @@ const Filter = ({ filter, items }) => {
                     (item, index) =>
                         item.manufacturer.toLowerCase() === setFilterElem(filter, item.manufacturer) &&
                         <div key={index} className={styles.product_card}>
+                            {console.log(item)}
                             <img src="https://consume-more-stuff-images.s3-us-west-2.amazonaws.com/1572740907680" alt={item.name} />
                             <h4>{item.name}</h4>
                             <p>{item.status}</p>
