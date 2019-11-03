@@ -8,7 +8,6 @@ const Filter = ({ filter, items }) => {
     }
 
 
-
     return (
         <div>
             <h1>{filter}</h1>
@@ -17,12 +16,13 @@ const Filter = ({ filter, items }) => {
                     (item, index) =>
                         item.manufacturer.toLowerCase() === setFilterElem(filter, item.manufacturer) &&
                         <div key={index} className={styles.product_card}>
-                            <img src="https://consume-more-stuff-images.s3-us-west-2.amazonaws.com/1572740907680" alt={item.name} />
+                            <div className={styles.img_container}>
+                                <img src={item.imageUrl} alt={item.name} />
+                            </div>
                             <h4>{item.name}</h4>
                             <p>{item.status}</p>
                         </div>
                 )}
-
             </div>
         </div>
     );
