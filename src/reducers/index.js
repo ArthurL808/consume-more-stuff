@@ -1,4 +1,4 @@
-import { LOAD_ITEMS, LOAD_USERS } from "../actions";
+import { LOAD_ITEMS, LOAD_USERS, ADD_ITEM } from "../actions";
 
 const initialState = {
   items: []
@@ -11,6 +11,9 @@ const reducer = (state = initialState, action) => {
       return { ...state, items: action.payload };
     case LOAD_USERS:
       return action.payload;
+      case ADD_ITEM:
+        const items = state.items.concat(action.payload)
+        return {items}
     default:
       return state;
   }
