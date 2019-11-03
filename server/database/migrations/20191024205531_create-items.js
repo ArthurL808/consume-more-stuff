@@ -6,6 +6,7 @@ exports.up = function (knex) {
         table.text('description').notNullable();
         table.decimal('price').notNullable();
         table.string('manufacturer');
+        table.string('imageUrl')
         table.integer('user_id').notNullable().references('id').inTable('users');
         table.integer('category_id').notNullable().references('id').inTable('categories');
         table.integer('itemStatus_id').notNullable().references('id').inTable('itemStatuses');
