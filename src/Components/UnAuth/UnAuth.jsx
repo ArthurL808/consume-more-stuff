@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './UnAuth.module.scss'
-import { Route, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { routes } from '../../Routes';
 import { connect } from 'react-redux';
 import { loadItemsAsync } from '../../actions';
