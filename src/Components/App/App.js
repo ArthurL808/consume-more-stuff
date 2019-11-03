@@ -10,7 +10,7 @@ import TopBar from '../TopBar';
 
 
 function App() {
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(true);
   const [sidebarOn, setSidebarOn] = useState(false);
 
 
