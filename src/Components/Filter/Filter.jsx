@@ -16,7 +16,10 @@ class Filter extends React.Component {
                         (item, index) =>
                             item.manufacturer.toLowerCase() === this.setFilterElem(this.props.filter, item.manufacturer) &&
                             <div key={index} className={styles.product_card}>
-                                <img src="https://f1.media.brightcove.com/8/1078702682/1078702682_6004950245001_6004956161001-vs.jpg?pubId=1078702682&videoId=6004956161001" alt={item.name} />
+                                <div className={styles.img_container}>
+                                    <img src="https://f1.media.brightcove.com/8/1078702682/1078702682_6004950245001_6004956161001-vs.jpg?pubId=1078702682&videoId=6004956161001" alt={item.name} />
+                                </div>
+
                                 <h4>{item.name}</h4>
                                 <p>{item.status}</p>
                             </div>
