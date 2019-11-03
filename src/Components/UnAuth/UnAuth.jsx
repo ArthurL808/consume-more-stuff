@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './UnAuth.module.scss'
-import { Route } from 'react-router-dom'
+import { Route, useLocation } from 'react-router-dom'
 import { routes } from '../../Routes';
+import { connect } from 'react-redux';
+import { loadItemsAsync } from '../../actions';
+import Filter from '../Filter';
 
-const UnAuth = () => {
+const UnAuth = (props) => {
+    const location = useLocation().pathname.slice(1);
+
+
+    const { dispatch, items } = props;
+
+    useEffect(() => {
+        dispatch(loadItemsAsync())
+    }, [dispatch])
+
+
+
     return (
         <div className={styles.container}>
-            {routes.map(route => (
-                <Route
-                    key={route.path}
-                    path={route.path}
-                    exact={route.exact}
-                    component={route.main}
-                />
-            ))}
+            {/* Change filter to location once the real seeds are setup */}
+            {items.length > 0 && <Filter items={items} filter={location} />}
         </div>
     )
 }
 
-export default UnAuth;
+
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps)(UnAuth);
+
+
+// {routes.map(route => (
+//     <Route
+//         key={route.path}
+//         path={route.path}
+//         exact={route.exact}
+//         component={route.main}
+//     />
+// ))}

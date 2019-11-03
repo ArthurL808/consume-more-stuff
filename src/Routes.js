@@ -13,23 +13,23 @@ export const routes = [
     {
         path: '/all',
         exact: true,
-        main: () => <UnAuthAll />
+        // main: () => <UnAuthAll />
     },
     {
         path: '/software',
-        main: () => <UnAuthSoftware />
+        // main: () => <UnAuthSoftware />
     },
     {
         path: '/hardware',
-        main: () => <UnAuthHardware />
+        // main: () => <UnAuthHardware />
     },
     {
         path: '/accessories',
-        main: () => <UnAuthAccessories />
+        // main: () => <UnAuthAccessories />
     },
     {
         path: '/misc',
-        main: () => <UnAuthMisc />
+        // main: () => <UnAuthMisc />
     },
     {
         path: '/home',
