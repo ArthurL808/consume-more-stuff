@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const upload = require('../../../services/file-upload')
+const singleUpload = upload.single('image')
 
 //localhost:8080/api/items
 router.get('/', (req, res) => {
-    return req.db.Items.fetchAll()
-        .then((items) => {
-            res.json(items);
-        })
-        .catch((error) => {
-            console.log('Error: ', error);
-            res.status(500).send({ message: 'Error fetching all items.' })
+    return req.db.Items.fetchAll({withRelated: ['user','category','itemStatus','condition']})
+        .then((results) => {
+            res.send(results.toJSON());
+
         });
 });
 router.get('/:id', (req, res) => {
@@ -24,12 +23,14 @@ router.get('/:id', (req, res) => {
         })
 })
 
-router.post('/new', (req, res) => {
+
+router.post('/new',singleUpload, (req, res) => {
     let newItem = {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
         manufacturer: req.body.manufacturer,
+        imageUrl: req.file.location,
         user_id: 1,
         category_id: 1,
         itemStatus_id: 1,

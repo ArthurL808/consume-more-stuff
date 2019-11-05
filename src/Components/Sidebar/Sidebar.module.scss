@@ -1,27 +1,68 @@
 @import "../../index.scss";
 
 .sidebar {
-  width: fit-content;
-  background: $black;
-  height: 90vh;
-  margin-top: 10vh;
-  padding: 20px 40px 0 40px;
+  display: none;
+}
 
-  h3 {
-    color: $white;
-    font-size: 2rem;
-    margin: 0;
-  }
+// .sidebar {
+//   width: 100%;
+//   background: $black;
+//   height: fit-content;
+//   position: fixed;
+//   top: 10vh;
+//   padding: 20px 40px 0 40px;
 
-  ul {
-    list-style: none;
+//   h3 {
+//     color: $white;
+//     font-size: 2rem;
+//     margin: 0;
+//     text-align: center;
+//   }
 
-    li {
-      margin: 10px 0;
-      font-size: 1.5rem;
+//   ul {
+//     display: flex;
+//     list-style: none;
+//     justify-content: space-between;
 
-      a {
-        color: $teal;
+//     li {
+//       margin: 10px 0;
+//       font-size: 0.75rem;
+
+//       a {
+//         color: $teal;
+//       }
+//     }
+//   }
+// }
+
+@media (min-width: $breakpoint-medium) {
+  .sidebar {
+    width: 15vw;
+    background: $black;
+    height: 90vh;
+    position: fixed;
+    top: 10vh;
+    padding: 20px 40px 0 40px;
+    display: block;
+
+    h3 {
+      color: $white;
+      font-size: 2rem;
+      margin: 0;
+      text-align: left;
+    }
+
+    ul {
+      list-style: none;
+      display: block;
+
+      li {
+        margin: 10px 0;
+        font-size: 1.25rem;
+
+        a {
+          color: $teal;
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import {
   BrowserRouter as Router,
@@ -6,24 +6,21 @@ import {
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import MainBody from '../MainBody';
-import { useDispatch } from 'react-redux';
-import { loadItemsAsync } from '../../actions';
+import TopBar from '../TopBar';
+
 
 function App() {
   const [isAuth, setAuth] = useState(false);
+  const [sidebarOn, setSidebarOn] = useState(false);
 
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(loadItemsAsync());
-  // })
 
   return (
     <Router>
       <div className="App">
-        <Header isAuth={isAuth} setAuth={setAuth} />
+        <Header isAuth={isAuth} setAuth={setAuth} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         <div className="main">
           <Sidebar isAuth={isAuth} />
+          <TopBar sidebarOn={sidebarOn} isAuth={isAuth} />
           <MainBody isAuth={isAuth} />
         </div>
       </div>
