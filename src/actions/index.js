@@ -3,6 +3,7 @@ export const LOAD_USERS = "LOAD_USERS";
 export const ADD_ITEM = 'ADD_ITEM';
 
 export const loadItemsAsync = () => async dispatch => {
+
   fetch("api/items")
     .then(response => {
       return response.json();
