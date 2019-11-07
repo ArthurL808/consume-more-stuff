@@ -43,9 +43,9 @@ const LoginForm = ({ setAuth, setLogin }) => {
                 <input type="password" name="password" placeholder="password" onChange={handleChange} />
                 <div className={styles.btn_collection}>
                     <input type="submit" value={newUser ? 'create account' : 'sign in'} className={styles.submit} onClick={() => setLogin(false)} />
-                    <span>{newUser ? 'sign in' : 'new user?'}
+                    <span>{newUser ? 'already a user?' : 'new user?'}
                         <button onClick={() => setNewUser(!newUser)}>
-                            {newUser ? 'go back to sign in' : 'sign up'}
+                            {newUser ? 'sign in' : 'sign up'}
                         </button>
                     </span>
                 </div>
