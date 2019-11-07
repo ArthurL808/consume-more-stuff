@@ -1,7 +1,17 @@
 import React from 'react';
 import styles from './Header.module.scss'
 
-const Header = ({ isAuth, setAuth, setSidebarOn, sidebarOn }) => {
+const Header = ({ isAuth, setAuth, setLogin, setSidebarOn, sidebarOn }) => {
+
+    function verifyAuth() {
+        if (isAuth) {
+            setAuth(false);
+            setLogin(false);
+        } else {
+            setLogin(true);
+        }
+    }
+
     return (
         <header>
             <div className={styles.logo}>
@@ -15,7 +25,7 @@ const Header = ({ isAuth, setAuth, setSidebarOn, sidebarOn }) => {
                     {sidebarOn ? 'close' : 'menu'}
                 </button>
 
-                <button onClick={() => setAuth(!isAuth)} className={styles.log_btn}>
+                <button onClick={verifyAuth} className={styles.log_btn}>
                     {isAuth ?
                         <p>logout</p> : <p>login</p>
                     }
