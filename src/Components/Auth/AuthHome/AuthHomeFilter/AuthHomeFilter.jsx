@@ -41,8 +41,8 @@ class AuthHomeFilter extends Component {
                 className={styles.prodList}
                 style={{ transform: `translate3d(${props.x}px, 0, 0)` }}
               >
-                {this.props.items &&
-                  this.props.items.map(
+                {this.props.items.items &&
+                  this.props.items.items.map(
                     item =>
                       item.itemStatus.status === this.props.filter && (
                         <div key={item.id}>
