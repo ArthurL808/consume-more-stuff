@@ -2,16 +2,47 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
+const LocalStrategy = require("passport-local");
 
 const User = require('../../../database/models/User');
 
 const saltRounds = 12;
 
+passport.use(
+    new LocalStrategy({usernameField: 'email'},
+    function (username, password, done) {
+      return new User({ email: username })
+        .fetch()
+        .then(user => {
+          console.log("this is the user:", user);
+  
+          if (user === null) {
+            return done(null, false, { message: "bad username or password" });
+          } else {
+            user = user.toJSON();
+  
+            bcrypt.compare(password, user.password).then(res => {
+              // Happy route: username exists, password matches
+              if (res) {
+                return done(null, user); //this is the user that goes to serialize
+              }
+              // Error Route: Username exists, password does not match
+              else {
+                return done(null, false, { message: "bad username or password" });
+              }
+            });
+          }
+        })
+        .catch(err => {
+          console.log("error: ", err);
+          return done(err.message);
+        });
+    })
+  );
 
 router.post(
     "/login",
     passport.authenticate("local"), (req, res) => {
-        console.log('Req.user::::::', req.user)
         res.json(req.user)
     });
 
