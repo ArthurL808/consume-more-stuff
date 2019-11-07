@@ -1,8 +1,41 @@
+@import "../../index.scss";
+
 .login_form {
   position: absolute;
-  top: calc(50% - 25vh);
+  top: calc(50% - 20vh);
   left: calc(50% - 15%);
-  height: 50vh;
+  height: 40vh;
   width: 30%;
-  background: red;
+  background: $pink;
+  display: grid;
+  place-items: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+
+  input {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+  }
+
+  .btn_collection {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      padding-top: 20px;
+      width: fit-content;
+      margin: 0 auto;
+
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
 }

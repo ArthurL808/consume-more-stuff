@@ -1,7 +1,9 @@
 import React, { useState, Fragment } from 'react';
-import styles from './LoginForm.module.scss'
+import styles from './LoginForm.module.scss';
+import { animated, useSpring } from 'react-spring';
 
-const LoginForm = ({ setAuth, setLogin }) => {
+
+const LoginForm = ({ setAuth, setLogin, login }) => {
     const [newUser, setNewUser] = useState(false);
     const [credentials, setCredentials] = useState({})
 
@@ -10,38 +12,45 @@ const LoginForm = ({ setAuth, setLogin }) => {
         event.preventDefault();
         console.log(JSON.stringify(credentials))
         setAuth(true);
-        setLogin(false);
     }
 
     function handleChange(e) {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
 
+    const fade = useSpring({
+        from: {
+            opacity: 0
+        },
+        to: {
+            opacity: 1
+        }
+    })
+
     return (
-        <div className={styles.login_form}>
+        <animated.div className={styles.login_form} style={fade}>
             <form onSubmit={handleSubmit}>
                 {
                     newUser &&
                     <Fragment>
-                        <label>email: </label>
+
                         <input type="email" placeholder="yo@email.com" name="email" onChange={handleChange} />
                     </Fragment>
                 }
 
-                <label>username: </label>
                 <input type="text" placeholder="cloutPanda5" name="email" onChange={handleChange} />
-                <label>password: </label>
+
                 <input type="password" name="password" placeholder="password" onChange={handleChange} />
-                <div>
-                    <input type="submit" value={newUser ? 'create account' : 'sign in'} />
+                <div className={styles.btn_collection}>
+                    <input type="submit" value={newUser ? 'create account' : 'sign in'} className={styles.submit} onClick={() => setLogin(false)} />
                     <span>{newUser ? 'sign in' : 'new user?'}
                         <button onClick={() => setNewUser(!newUser)}>
-                            {newUser ? 'go back to sign in' : 'sign in'}
+                            {newUser ? 'go back to sign in' : 'sign up'}
                         </button>
                     </span>
                 </div>
             </form>
-        </div>
+        </animated.div>
     )
 }
 
