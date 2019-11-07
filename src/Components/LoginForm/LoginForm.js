@@ -1,12 +1,20 @@
 import React, { useState, Fragment } from 'react';
 import styles from './LoginForm.module.scss'
 
-const LoginForm = () => {
+const LoginForm = ({ setAuth, setLogin }) => {
     const [newUser, setNewUser] = useState(false);
+    const [credentials, setCredentials] = useState({})
+
 
     function handleSubmit(event) {
         event.preventDefault();
-        // console.log(JSON.stringify(this.state))
+        console.log(JSON.stringify(credentials))
+        setAuth(true);
+        setLogin(false);
+    }
+
+    function handleChange(e) {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
 
     return (
@@ -16,14 +24,14 @@ const LoginForm = () => {
                     newUser &&
                     <Fragment>
                         <label>email: </label>
-                        <input type="email" placeholder="yo@email.com" />
+                        <input type="email" placeholder="yo@email.com" name="email" onChange={handleChange} />
                     </Fragment>
                 }
 
                 <label>username: </label>
-                <input type="text" placeholder="cloutPanda5" />
+                <input type="text" placeholder="cloutPanda5" name="email" onChange={handleChange} />
                 <label>password: </label>
-                <input type="password" placeholder="password" />
+                <input type="password" name="password" placeholder="password" onChange={handleChange} />
                 <div>
                     <input type="submit" value={newUser ? 'create account' : 'sign in'} />
                     <span>{newUser ? 'sign in' : 'new user?'}

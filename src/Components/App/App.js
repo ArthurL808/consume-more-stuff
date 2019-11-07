@@ -22,7 +22,7 @@ function App() {
         <Header isAuth={isAuth} setAuth={setAuth} setLogin={setLogin} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         <div className="main">
           {
-            login && <LoginForm setAuth={setAuth} />
+            login && <LoginForm setAuth={setAuth} setLogin={setLogin} />
           }
 
           <Sidebar isAuth={isAuth} />
