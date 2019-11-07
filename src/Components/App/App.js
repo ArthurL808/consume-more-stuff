@@ -13,7 +13,7 @@ import LoginForm from '../LoginForm';
 function App() {
   const [isAuth, setAuth] = useState(false);
   const [sidebarOn, setSidebarOn] = useState(false);
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
 
 
   return (
