@@ -3,7 +3,7 @@ import styles from './LoginForm.module.scss';
 import { animated, useSpring } from 'react-spring';
 
 
-const LoginForm = ({ setAuth, setLogin }) => {
+const LoginForm = ({ setAuth, setLogin, isAuth }) => {
     const [newUser, setNewUser] = useState(false);
     const [credentials, setCredentials] = useState({})
 
@@ -12,6 +12,7 @@ const LoginForm = ({ setAuth, setLogin }) => {
         event.preventDefault();
         console.log(JSON.stringify(credentials))
         setAuth(true);
+        setLogin(false);
     }
 
     function handleChange(e) {
@@ -42,11 +43,11 @@ const LoginForm = ({ setAuth, setLogin }) => {
 
                 <input type="password" name="password" placeholder="password" onChange={handleChange} />
                 <div className={styles.btn_collection}>
-                    <input type="submit" value={newUser ? 'create account' : 'sign in'} className={styles.submit} onClick={() => setLogin(false)} />
+                    <input type="submit" value={newUser ? 'create account' : 'sign in'} className={styles.submit} />
                     <span>{newUser ? 'already a user?' : 'new user?'}
-                        <button onClick={() => setNewUser(!newUser)}>
+                        <div className={styles.signup_btn} onClick={() => setNewUser(!newUser)}>
                             {newUser ? 'sign in' : 'sign up'}
-                        </button>
+                        </div>
                     </span>
                 </div>
             </form>
