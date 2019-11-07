@@ -3,7 +3,7 @@ import styles from './LoginForm.module.scss';
 import { animated, useSpring } from 'react-spring';
 
 
-const LoginForm = ({ setAuth, setLogin, login }) => {
+const LoginForm = ({ setAuth, setLogin }) => {
     const [newUser, setNewUser] = useState(false);
     const [credentials, setCredentials] = useState({})
 

@@ -13,7 +13,7 @@ import LoginForm from '../LoginForm';
 function App() {
   const [isAuth, setAuth] = useState(false);
   const [sidebarOn, setSidebarOn] = useState(false);
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
 
 
   return (
@@ -22,7 +22,7 @@ function App() {
         <Header isAuth={isAuth} setAuth={setAuth} setLogin={setLogin} sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         <div className="main">
           {
-            login && <LoginForm setAuth={setAuth} setLogin={setLogin} login={login} />
+            login && <LoginForm setAuth={setAuth} setLogin={setLogin} />
           }
 
           <Sidebar isAuth={isAuth} />
