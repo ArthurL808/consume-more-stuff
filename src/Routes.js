@@ -1,4 +1,5 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import AuthNewItem from "./Components/Auth/AuthNewItem";
 import AuthHome from "./Components/Auth/AuthHome";
 import AuthMessages from "./Components/Auth/AuthMessages";
@@ -6,9 +7,10 @@ import AuthSettings from "./Components/Auth/AuthSettings";
 import AuthEditItem from "./Components/Auth/AuthEditItem";
 import AuthDetailItem from "./Components/Auth/AuthDetailItem";
 
+//Global routes
 export const routes = [
   {
-    path: "/home",
+    path: "/",
     exact: true,
     main: () => <AuthHome />
   },
@@ -38,3 +40,20 @@ export const routes = [
     main: () => <AuthEditItem />
   }
 ];
+
+const Routes = () => {
+  return (
+    <>
+      {routes.map((route, i) => (
+        <Route
+          key={`auth_routes_${i}`}
+          path={route.path}
+          exact={route.exact}
+          component={route.component}
+        />
+      ))}
+    </>
+  );
+};
+
+export default Routes;
