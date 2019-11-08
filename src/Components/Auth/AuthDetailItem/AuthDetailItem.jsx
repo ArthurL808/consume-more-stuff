@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { loadItemsAsync } from "../../../actions";
+// import { withRouter } from "react-router-dom";
 // import AuthEditItem from "../AuthEditItem";
 
 class AuthDetailItem extends Component {
@@ -17,10 +18,8 @@ class AuthDetailItem extends Component {
       <>
         <h1>yo</h1>
 
-        {/* 
-THIS ISNT WORKINGGGGGG */}
         <div>
-          {console.log(this.props)}
+          {console.log("this.props", this.prop)}
           hello
         </div>
       </>
