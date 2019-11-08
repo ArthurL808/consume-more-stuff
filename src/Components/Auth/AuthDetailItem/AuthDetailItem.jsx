@@ -1,23 +1,31 @@
 import React, { Component, Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { loadItemsAsync } from "../../../actions";
-import { useLocation } from "react-router-dom";
-// import { withRouter } from "react-router-dom";
-// import AuthEditItem from "../AuthEditItem";
 
-const AuthDetailItem = props => {
-  const location = useLocation().pathname.split("/")[2];
-
-  const { dispatch, items } = props;
+const AuthDetailItem = ({ ...props }) => {
+  const { dispatch, items, match } = props;
+  const id = parseInt(match.params.id);
 
   useEffect(() => {
     dispatch(loadItemsAsync());
-  }, [dispatch, location]);
+  }, [dispatch]);
 
   return (
     <Fragment>
-      <h1>{location}</h1>
-      <div>hello</div>
+      {items &&
+        items.map(
+          item =>
+            item.id === id && (
+              <div key={id}>
+                <h2>•~Item Detail~•</h2>
+                <img src={item.imageUrl} alt="MOOOOOOOO" />
+                <h3>{item.name}</h3>
+                <p>Description: {item.description}</p>
+                <p>Price: {item.price}</p>
+                <p>Manufacturer: {item.manufacturer}</p>
+              </div>
+            )
+        )}
     </Fragment>
   );
 };

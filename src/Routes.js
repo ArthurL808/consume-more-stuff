@@ -6,47 +6,105 @@ import AuthMessages from "./Components/Auth/AuthMessages";
 import AuthSettings from "./Components/Auth/AuthSettings";
 import AuthEditItem from "./Components/Auth/AuthEditItem";
 import AuthDetailItem from "./Components/Auth/AuthDetailItem";
+// import UnAuth from "./Components/UnAuth";
 
-//Global routes
+//need to change to logged out routes but logged in for now...
 export const routes = [
   {
     path: "/",
     exact: true,
-    main: () => <AuthHome />
+    component: AuthHome
   },
   {
     path: "/new",
     exact: true,
-    main: () => <AuthNewItem />
+    component: AuthNewItem
   },
   {
     path: "/messages",
     exact: true,
-    main: () => <AuthMessages />
+    component: AuthMessages
   },
   {
     path: "/settings",
     exact: true,
-    main: () => <AuthSettings />
+    component: AuthSettings
   },
   {
     path: "/item/:id",
     exact: true,
-    main: () => <AuthDetailItem />
+    component: AuthDetailItem
   },
   {
     path: "/edit/:id",
     exact: true,
-    main: () => <AuthEditItem />
+    component: AuthEditItem
   }
 ];
+
+//logged in route
+// export const LoggedInRoutes =() => {
+//   const status = localStorage.getItem('status');
+//   const loggedInRoutes =
+//   [
+//     {
+//       path: "/",
+//       exact: true,
+//       component: AuthHome
+//     },
+//     {
+//       path: "/new",
+//       exact: true,
+//       component: AuthNewItem
+//     },
+//     {
+//       path: "/messages",
+//       exact: true,
+//       component: AuthMessages
+//     },
+//     {
+//       path: "/settings",
+//       exact: true,
+//       component: AuthSettings
+//     },
+//     {
+//       path: "/item/:id",
+//       exact: true,
+//       component: AuthDetailItem
+//     },
+//     {
+//       path: "/edit/:id",
+//       exact: true,
+//       component: AuthEditItem
+//     }
+//   ];
+
+//   return (
+//     <>
+//     {status === 'loggedIn' && (
+//       <>
+//       {loggedInRoutes.map((route, i) => (
+//         <Route
+//         key={`auth_routes_${i}`}
+//         path={route.path}
+//           exact={route.exact}
+//           component={route.component}
+//       />
+//       ))}
+//       </>
+//     )}
+//     </>
+//   )
+// }
 
 const Routes = () => {
   return (
     <>
+      {/* <LoggedInRoutes /> */}
+
       {routes.map((route, i) => (
         <Route
-          key={`auth_routes_${i}`}
+          key={`global_routes_${i}`}
           path={route.path}
           exact={route.exact}
           component={route.component}

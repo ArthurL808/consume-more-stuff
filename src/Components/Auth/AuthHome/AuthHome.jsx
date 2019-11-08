@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 // import styles from "./AuthHome.module.scss";
 import AuthHomeFilter from "../AuthHomeFilter";
 import { connect } from "react-redux";
