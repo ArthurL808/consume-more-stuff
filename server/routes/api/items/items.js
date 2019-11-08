@@ -8,8 +8,20 @@ router.get('/', (req, res) => {
     return req.db.Items.fetchAll({withRelated: ['user','category','itemStatus','condition']})
         .then((results) => {
             res.send(results.toJSON());
+
         });
 });
+router.get('/:id', (req, res) => {
+    return req.db.Items.where({ id: req.params.id })
+        .fetch()
+        .then((item) => {
+            res.json(item);
+        })
+        .catch((error) => {
+            console.log('Error: ', error);
+            res.status(400).send({ message: 'Error fetching item.' })
+        })
+})
 
 
 router.post('/new',singleUpload, (req, res) => {
