@@ -1,16 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import styles from "./Auth.module.scss";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { routes } from "../../Routes";
 
 class Auth extends Component {
   state = {};
   render() {
+
+
     return (
-      <Router>
+      <Fragment>
         <div className={styles.auth_page}>
           <h1>Logged In</h1>
-
           {routes.map(route => (
             <Route
               key={route.path}
@@ -21,7 +22,7 @@ class Auth extends Component {
             />
           ))}
         </div>
-      </Router>
+      </Fragment>
     );
   }
 }

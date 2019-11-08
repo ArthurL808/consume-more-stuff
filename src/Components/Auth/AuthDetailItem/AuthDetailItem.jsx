@@ -1,30 +1,30 @@
-import React, { Component } from "react";
+import React, { Component, Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { loadItemsAsync } from "../../../actions";
+import { useLocation } from 'react-router-dom'
 // import { withRouter } from "react-router-dom";
 // import AuthEditItem from "../AuthEditItem";
 
-class AuthDetailItem extends Component {
-  constructor(props) {
-    super(props);
-  }
+const AuthDetailItem = (props) => {
+  const location = useLocation().pathname.split('/')[2];
 
-  componentDidMount() {
-    this.props.dispatch(loadItemsAsync());
-  }
 
-  render() {
-    return (
-      <>
-        <h1>yo</h1>
+  const { dispatch, items } = props;
 
-        <div>
-          {console.log("this.props", this.prop)}
-          hello
+  useEffect(() => {
+    dispatch(loadItemsAsync())
+
+  }, [dispatch, location])
+
+
+  return (
+    <Fragment>
+      <h1>{location}</h1>
+      <div>
+        hello
         </div>
-      </>
-    );
-  }
+    </Fragment>
+  );
 }
 
 const mapStateToProps = state => {

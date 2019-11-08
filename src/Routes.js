@@ -9,26 +9,32 @@ import AuthDetailItem from "./Components/Auth/AuthDetailItem";
 export const routes = [
   {
     path: "/home",
+    exact: true,
     main: () => <AuthHome />
   },
   {
     path: "/new",
+    exact: true,
     main: () => <AuthNewItem />
   },
   {
     path: "/messages",
+    exact: true,
     main: () => <AuthMessages />
   },
   {
     path: "/settings",
+    exact: true,
     main: () => <AuthSettings />
   },
   {
     path: "/item/:id",
+    exact: true,
     main: () => <AuthDetailItem />
   },
   {
     path: "/edit/:id",
+    exact: true,
     main: () => <AuthEditItem />
   }
 ];
