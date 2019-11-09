@@ -5,7 +5,7 @@ export const LOAD_ITEM = 'LOAD_ITEM'
 
 export const loadItemsAsync = () => async dispatch => {
 
-  fetch("api/items")
+  fetch("/items")
     .then(response => {
       return response.json();
     })
@@ -40,7 +40,7 @@ export const loadItemAsync = () => async dispatch =>{
 }
 
 export const addItemAsync = item => async dispatch => {
-  fetch('api/items/new',{
+  fetch('api/items/new', {
     method: "POST",
     body: item,
     header: {

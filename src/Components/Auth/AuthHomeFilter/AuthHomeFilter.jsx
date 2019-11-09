@@ -46,7 +46,12 @@ class AuthHomeFilter extends Component {
                     item =>
                       item.itemStatus.status === this.props.filter && (
                         <div key={item.id}>
-                          <Link to="/edit/:id">
+                          <Link
+                            to={location => ({
+                              ...location,
+                              pathname: `/item/${item.id}`
+                            })}
+                          >
                             <div className={styles.imageContainer}>
                               <img src={item.imageUrl} alt="Meow" />
                             </div>
