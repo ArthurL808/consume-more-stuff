@@ -16,7 +16,6 @@ const UnAuth = (props) => {
     }, [dispatch])
 
 
-
     return (
         <div className={styles.container}>
             {/* Change filter to location once the real seeds are setup */}
