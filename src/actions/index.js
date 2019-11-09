@@ -1,6 +1,7 @@
 export const LOAD_ITEMS = "LOAD_ITEMS";
 export const LOAD_USERS = "LOAD_USERS";
 export const ADD_ITEM = 'ADD_ITEM';
+export const LOAD_ITEM = 'LOAD_ITEM'
 
 export const loadItemsAsync = () => async dispatch => {
 
@@ -20,6 +21,23 @@ export const loadItemsAsync = () => async dispatch => {
       console.log(err.message);
     });
 };
+
+export const loadItemAsync = () => async dispatch =>{
+
+  fetch("api/items/:id")
+  .then(response => {
+    return response.json();
+  })
+  .then(item =>{
+    dispatch({
+      type: LOAD_ITEM,
+      payload: item
+    })
+    .catch(err =>{
+      console.log(err.message)
+    })
+  })
+}
 
 export const addItemAsync = item => async dispatch => {
   fetch('api/items/new', {

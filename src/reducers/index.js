@@ -1,22 +1,10 @@
-import { LOAD_ITEMS, LOAD_USERS, ADD_ITEM } from "../actions";
+import { combineReducers } from "redux";
+import itemsReducer from "./itemsReducer";
+import singleItemReducer from "./singleItemReducer";
 
-const initialState = {
-  items: []
-};
-
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case LOAD_ITEMS:
-      // console.log(action);
-      return { ...state, items: action.payload };
-    case LOAD_USERS:
-      return action.payload;
-      case ADD_ITEM:
-        const items = state.items.concat(action.payload)
-        return {items}
-    default:
-      return state;
-  }
-};
+const reducer = combineReducers({
+  items: itemsReducer,
+  item: singleItemReducer
+});
 
 export default reducer;
