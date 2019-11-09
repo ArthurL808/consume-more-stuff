@@ -1,9 +1,12 @@
 @import "../../../index.scss";
 
 .container {
-  position: relative;
-  overflow: hidden;
+  position: absolute;
+  overflow-x: hidden;
   width: 100%;
+  top: 10vh;
+  left: 0;
+
   button {
     display: grid;
     place-items: center;
@@ -48,11 +51,5 @@
         }
       }
     }
-  }
-}
-
-@media (min-width: $breakpoint-medium) {
-  .container {
-    width: calc(100% - 15vw);
   }
 }
