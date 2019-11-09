@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 // import styles from "./AuthHome.module.scss";
-import AuthHomeFilter from "./AuthHomeFilter";
+import AuthHomeFilter from "../AuthHomeFilter";
 import { connect } from "react-redux";
 import { loadItemsAsync } from "../../../actions";
+import styles from './AuthHome.module.scss';
 
 class AuthHome extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class AuthHome extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.authhome_container}>
         <AuthHomeFilter items={this.props.items} filter={"pending"} />
         <AuthHomeFilter items={this.props.items} filter={"published"} />
         <AuthHomeFilter items={this.props.items} filter={"sold"} />
@@ -27,7 +28,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(AuthHome);
-
-// return this.props.items.map(item => (
-//   <AuthHomeFilter key={item.id} filter={item.itemStatus_id} item={item} />
-// ));

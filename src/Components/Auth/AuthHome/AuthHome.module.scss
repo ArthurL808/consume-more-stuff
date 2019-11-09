@@ -1,1 +1,15 @@
 @import "../../../index.scss";
+
+$elements: 15;
+
+.authhome_container {
+  position: relative;
+  width: 100%;
+
+  @for $i from 0 to $elements {
+    div:nth-child(#{$i + 1}) {
+      //   background: rgb($i, $i, $i);
+      top: $i * 50vh;
+    }
+  }
+}
