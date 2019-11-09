@@ -1,9 +1,7 @@
 @import "../../../index.scss";
 
 .container {
-  // position: absolute;
   position: absolute;
-  // overflow-x: scroll;
   overflow-x: hidden;
   width: 100%;
   top: 10vh;
@@ -55,9 +53,3 @@
     }
   }
 }
-
-// @media (min-width: $breakpoint-medium) {
-//   .container {
-//     width: calc(100% - 15vw);
-//   }
-// }
