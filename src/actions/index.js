@@ -5,7 +5,7 @@ export const LOAD_ITEM = 'LOAD_ITEM'
 
 export const loadItemsAsync = () => async dispatch => {
 
-  fetch("/items")
+  fetch("/api/items")
     .then(response => {
       return response.json();
     })
@@ -14,7 +14,6 @@ export const loadItemsAsync = () => async dispatch => {
         type: LOAD_ITEMS,
         payload: items
       });
-      // console.log(items)
       return items;
     })
     .catch(err => {
@@ -22,25 +21,26 @@ export const loadItemsAsync = () => async dispatch => {
     });
 };
 
-export const loadItemAsync = () => async dispatch =>{
+export const loadItemAsync = (id) => async dispatch =>{
 
-  fetch("api/items/:id")
+  fetch(`/api/items/${id}`)
   .then(response => {
     return response.json();
   })
   .then(item =>{
+    console.log(item)
     dispatch({
       type: LOAD_ITEM,
       payload: item
     })
-    .catch(err =>{
-      console.log(err.message)
-    })
   })
+      .catch(err =>{
+        console.log(err.message)
+      })
 }
 
 export const addItemAsync = item => async dispatch => {
-  fetch('api/items/new', {
+  fetch('/api/items/new', {
     method: "POST",
     body: item,
     header: {
