@@ -2,10 +2,8 @@
 
 // Variables
 // Fonts
-$body-font: "Chakra Petch",
-sans-serif;
-$header-font: "Press Start 2P",
-cursive;
+$body-font: "Chakra Petch", sans-serif;
+$header-font: "Press Start 2P", cursive;
 // Colors
 $white: #f8fbf9;
 $teal: #45d6b3;
@@ -17,13 +15,13 @@ $breakpoint-medium: "1024px";
 
 // Mixins
 @mixin for-tablet {
-  @media(min-width: $breakpoint-small) {
+  @media (min-width: $breakpoint-small) {
     @content;
   }
 }
 
 @mixin for-laptop-sm {
-  @media(min-width: $breakpoint-medium) {
+  @media (min-width: $breakpoint-medium) {
     @content;
   }
 }
@@ -68,4 +66,15 @@ h6 {
 
 a {
   text-decoration: none;
+}
+
+button {
+  background: $pink;
+  border: none;
+  color: $white;
+  padding: 10px 20px;
+
+  * {
+    color: $white;
+  }
 }
