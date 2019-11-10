@@ -14,7 +14,7 @@ class AuthNewItem extends Component {
       make: "",
       itemStatus: "pending",
       note: "",
-      imgUrl: ""
+      imageUrl: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -57,7 +57,7 @@ class AuthNewItem extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(JSON.stringify(this.state))
+    console.log(this.state)
   }
 
   //ADD onChange TO RETURN IN RENDER AND THEN CREATE INPUT HANDLER FUNCTIONS LATER

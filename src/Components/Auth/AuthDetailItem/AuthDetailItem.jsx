@@ -1,18 +1,18 @@
 import React, { Component, Fragment, useEffect } from "react";
 import { connect } from "react-redux";
-import { loadItemsAsync } from "../../../actions";
+import { loadItemAsync } from "../../../actions";
 
 const AuthDetailItem = ({ ...props }) => {
-  const { dispatch, items, match } = props;
+  const { dispatch, item, match } = props;
   const id = parseInt(match.params.id);
-
   useEffect(() => {
-    dispatch(loadItemsAsync());
+    dispatch(loadItemAsync(id));
   }, [dispatch]);
 
   return (
     <Fragment>
-      {items &&
+      <h1>hello</h1>
+      {/* {items &&
         items.map(
           item =>
             item.id === id && (
@@ -25,13 +25,13 @@ const AuthDetailItem = ({ ...props }) => {
                 <p>Manufacturer: {item.manufacturer}</p>
               </div>
             )
-        )}
+        )} */}
     </Fragment>
   );
 };
 
 const mapStateToProps = state => {
-  return { items: state.items };
+  return { item: state.item };
 };
 
 export default connect(mapStateToProps)(AuthDetailItem);
