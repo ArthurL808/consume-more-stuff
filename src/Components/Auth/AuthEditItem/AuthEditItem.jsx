@@ -1,10 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-class AuthEditItem extends Component {
-  state = {};
-  render() {
-    return <div>Hello Meow</div>;
-  }
-}
+const AuthEditItem = ({ ...props }) => {
+  return <div>Hello Meow</div>;
+};
 
 export default AuthEditItem;
