@@ -158,9 +158,9 @@ class AuthNewItem extends Component {
           </div>
 
           <div className={styles.new_item_img}>
-            <input name="imgUrl" type="file" onChange={this.handleChange} />
+            <input className={styles.file_input} name="imgUrl" type="file" onChange={this.handleChange} />
           </div>
-          <input type="submit" value="Submit" />
+          <input className={styles.submit_btn} type="submit" value="Submit" />
         </div>
       </form>
     );
