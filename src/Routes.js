@@ -6,7 +6,7 @@ import AuthMessages from "./Components/Auth/AuthMessages";
 import AuthSettings from "./Components/Auth/AuthSettings";
 import AuthEditItem from "./Components/Auth/AuthEditItem";
 import AuthDetailItem from "./Components/Auth/AuthDetailItem";
-// import UnAuth from "./Components/UnAuth";
+import UnAuth from "./Components/UnAuth";
 
 //need to change to logged out routes but logged in for now...
 export const routes = [
@@ -15,6 +15,9 @@ export const routes = [
     exact: true,
     component: AuthHome
   },
+  {path: '/all',
+   exact: true,
+  component: UnAuth},
   {
     path: "/new",
     exact: true,
