@@ -13,11 +13,11 @@ class AuthHomeFilter extends Component {
   }
 
   increment = () => {
-    this.setState({ value: this.state.value + 50 });
+    this.setState({ value: this.state.value + 250 });
   };
 
   decrease = () => {
-    this.setState({ value: this.state.value - 50 });
+    this.setState({ value: this.state.value - 250 });
   };
 
   render() {
