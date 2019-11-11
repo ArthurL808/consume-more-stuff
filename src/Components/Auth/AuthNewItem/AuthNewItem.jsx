@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styles from "./AuthNewItem.module.scss";
+import { connect } from "react-redux";
+import { addItemAsync } from "../../../actions";
 
 class AuthNewItem extends Component {
   constructor(props) {
@@ -9,12 +11,12 @@ class AuthNewItem extends Component {
       name: "",
       description: "",
       price: "",
-      condition: "new",
-      category: "Hardware",
+      condition: 1,
+      category: 1,
       make: "",
       itemStatus: 1,
       note: "",
-      imageUrl: ""
+      image: null
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,7 +35,7 @@ class AuthNewItem extends Component {
         this.setState({ price: event.target.value });
         break;
       case "condition":
-        this.setState({ condition: event.target.value });
+        this.setState({ condition: parseInt(event.target.value) });
         break;
       case "make":
         this.setState({ make: event.target.value });
@@ -42,13 +44,13 @@ class AuthNewItem extends Component {
         this.setState({ note: event.target.value });
         break;
       case "category":
-        this.setState({ category: event.target.value });
+        this.setState({ category: parseInt(event.target.value) });
         break;
       case "itemStatus":
-        this.setState({ itemStatus: parseInt(event.target.value, 10) });
+        this.setState({ itemStatus: parseInt(event.target.value) });
         break;
-      case "imgUrl":
-        this.setState({ imgUrl: event.target.value });
+      case "image":
+        this.setState({ image: event.target.files[0] });
         break;
       default:
         break;
@@ -57,7 +59,17 @@ class AuthNewItem extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(typeof this.state.itemStatus);
+
+    function getFormData(object) {
+      const formData = new FormData();
+      Object.keys(object).forEach(key => formData.append(key, object[key]));
+
+      return formData;
+    }
+
+    const data = getFormData(this.state);
+
+    this.props.addItem(data);
   }
 
   render() {
@@ -102,9 +114,9 @@ class AuthNewItem extends Component {
               name="condition"
               onChange={this.handleChange}
             >
-              <option>new</option>
-              <option>good</option>
-              <option>used</option>
+              <option value={1}>new</option>
+              <option value={2}>good</option>
+              <option value={3}>used</option>
             </select>
           </div>
 
@@ -116,10 +128,10 @@ class AuthNewItem extends Component {
               name="category"
               onChange={this.handleChange}
             >
-              <option>Hardware</option>
-              <option>Software</option>
-              <option>Accessories</option>
-              <option>Miscellaneous</option>
+              <option value={1}>Hardware</option>
+              <option value={2}>Software</option>
+              <option value={3}>Accessories</option>
+              <option value={4}>Miscellaneous</option>
             </select>
           </div>
 
@@ -131,9 +143,9 @@ class AuthNewItem extends Component {
               name="itemStatus"
               onChange={this.handleChange}
             >
-              <option value={parseInt(1)}>pending</option>
-              <option value={parseInt(2)}>published</option>
-              <option value={parseInt(3)}>sold</option>
+              <option value={1}>pending</option>
+              <option value={2}>published</option>
+              <option value={3}>sold</option>
             </select>
           </div>
 
@@ -158,7 +170,7 @@ class AuthNewItem extends Component {
           </div>
 
           <div className={styles.new_item_img}>
-            <input name="imgUrl" type="file" onChange={this.handleChange} />
+            <input name="image" type="file" onChange={this.handleChange} />
           </div>
           <input type="submit" value="Submit" />
         </div>
@@ -166,8 +178,18 @@ class AuthNewItem extends Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    addItem: item => {
+      dispatch(addItemAsync(item));
+    }
+  };
+};
 
-export default AuthNewItem;
+export default connect(
+  null,
+  mapDispatchToProps
+)(AuthNewItem);
 
 /*
 description --
@@ -181,3 +203,5 @@ imgUrl
 userId
 item status - pending published sold
 */
+
+//Might have to manage posting items and images separately
