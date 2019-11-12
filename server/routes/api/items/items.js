@@ -25,17 +25,22 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/new',singleUpload, (req, res) => {
+    console.log(req)
     let newItem = {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
         manufacturer: req.body.make,
-        imageUrl: req.file.location,
         user_id: 1,
         category_id: req.body.category,
         itemStatus_id: req.body.itemStatus,
         condition_id: req.body.condition
     };
+    if(!req.file){
+        newItem.imageUrl = 'https://consume-more-stuff-images.s3-us-west-2.amazonaws.com/1572740907680'
+    }else{
+        newItem.imageUrl = req.file.location
+    }
     return req.db.Items.forge(newItem)
         .save()
         .then(() => {
