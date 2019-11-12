@@ -29,12 +29,12 @@ router.post('/new',singleUpload, (req, res) => {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        manufacturer: req.body.manufacturer,
+        manufacturer: req.body.make,
         imageUrl: req.file.location,
         user_id: 1,
-        category_id: 1,
-        itemStatus_id: 1,
-        condition_id: 1
+        category_id: req.body.category,
+        itemStatus_id: req.body.itemStatus,
+        condition_id: req.body.condition
     };
     return req.db.Items.forge(newItem)
         .save()
@@ -43,7 +43,7 @@ router.post('/new',singleUpload, (req, res) => {
         })
         .catch((error) => {
             console.log('Error: ', error);
-            res.status(500).json({ message: 'Could not ;post item.' })
+            res.status(500).json({ message: 'Could not post item.' })
         });
 });
 

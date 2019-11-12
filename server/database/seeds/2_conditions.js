@@ -6,6 +6,7 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('conditions').insert([
         {condition: 'new'},
+        {condition: 'good'},
         {condition: 'used'}
       ]);
     });
