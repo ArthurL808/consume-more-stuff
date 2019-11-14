@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styles from "./AuthEditItem.module.scss";
-import { editItemAsync, loadItemAsync } from "../../../actions";
+import { editItemAsync, loadItemAsync, deleteItemAsync } from "../../../actions";
 
 class AuthEditItem extends Component {
   constructor(props) {
@@ -21,12 +21,14 @@ class AuthEditItem extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   componentDidMount() {
     const {loadItem, match} = this.props
-    loadItem(match.params.id)
-  }
 
+    loadItem(match.params.id)
+    this.setState(this.props.item)
+  }
+  
   handleChange(event) {
     switch (event.target.name) {
       case "name":
@@ -76,8 +78,13 @@ class AuthEditItem extends Component {
     this.props.editItem(id,data);
   }
 
+  handleDelete() {
+    console.log(this.props)
+  }
+
   render() {
     return (
+      <>
       <form className={styles.auth_edit_item} onSubmit={this.handleSubmit}>
         <div className={styles.edit_item_details}>
           <div>
@@ -164,7 +171,7 @@ class AuthEditItem extends Component {
           </div>
 
           <div className={styles.edit_item_img}>
-          {/* <img src={this.state.imageUrl} alt="MOOOOOOOO" /> */}
+          <img src={this.state.imageUrl} alt="Image" />
             <input
               className={styles.file_input}
               name="image"
@@ -175,6 +182,9 @@ class AuthEditItem extends Component {
           <input className={styles.submit_btn} type="submit" value="Submit" />
         </div>
       </form>
+      
+      <input className={styles.submit_btn} type="button" value="Delete Item" onClick={this.handleDelete}/>
+      </>
     );
   }
 }
@@ -185,10 +195,14 @@ const mapDispatchToProps = dispatch => {
     },
     loadItem: item => {
       dispatch(loadItemAsync(item));
+    },
+    deleteItem: id => {
+      dispatch(deleteItemAsync(id))
     }
   };
 };
 const mapStateToProps = state => {
+  console.log(state)
   return { item: state.item };
 };
 
