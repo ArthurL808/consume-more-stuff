@@ -19,8 +19,9 @@ class AuthHomeFilter extends Component {
   decrease = () => {
     this.setState({ value: this.state.value - 250 });
   };
-
+  
   render() {
+    console.log(this.props.items.items)
     return (
       <>
         <div className={styles.container}>
@@ -41,10 +42,10 @@ class AuthHomeFilter extends Component {
                 className={styles.prodList}
                 style={{ transform: `translate3d(${props.x}px, 0, 0)` }}
               >
-                {this.props.items.items &&
+                {this.props.items &&
                   this.props.items.items.map(
                     item =>
-                      item.itemStatus.status === this.props.filter && (
+                     item.itemStatus && item.itemStatus.status === this.props.filter && (
                         <div key={item.id}>
                           <Link
                             to={location => ({
