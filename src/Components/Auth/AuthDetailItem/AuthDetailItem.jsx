@@ -7,9 +7,8 @@ import styles from "./AuthDetailItem.module.scss";
 const AuthDetailItem = ({ ...props }) => {
   const { dispatch, item, match } = props;
   const id = parseInt(match.params.id);
-  const details = item.initialState;
-  const createdDate = details && new Date(details.created_at).toUTCString();
-  const updatedDate = details && new Date(details.updated_at).toUTCString();
+  const createdDate = item && new Date(item.created_at).toUTCString();
+  const updatedDate = item && new Date(item.updated_at).toUTCString();
 
   useEffect(() => {
     dispatch(loadItemAsync(id));
@@ -21,74 +20,49 @@ const AuthDetailItem = ({ ...props }) => {
         <Link to="/">Go Back</Link>
       </button>
 
-      <div key={id} className={styles.detailBody}>
-        <div className={styles.titleAndImage}>
-          <h2 className={styles.header}>•~Item Detail~•</h2>
-          {details && (
-            <img
-              src={details.imageUrl}
-              alt="MOOOOOOOO"
-              className={styles.image}
-            />
-          )}
-        </div>
 
-        <div className={styles.detailsText}>
-          {details && (
-            <>
-              <ul>
-                <li>
-                  <h3>{details.name}</h3>
-                </li>
-                <li>
-                  <h4>Description:</h4>
-                  {details.description}
-                </li>
-                <li>
-                  <h4>Price:</h4>
-                  {details.price}
-                </li>
-                <li>
-                  <h4>Manufacturer:</h4>
-                  {details.manufacturer}
-                </li>
-                <li>
-                  <h4>Condition:</h4>
-                  {details.condition.condition}
-                </li>
-                <li>
-                  <h4>Category:</h4>
-                  {details.category.category}
-                </li>
-                <li>
-                  <h5>Created At:</h5>
-                  {createdDate}
-                </li>
-                <li>
-                  <h5>Updated At:</h5>
-                  {updatedDate}
-                </li>
-              </ul>
+      <div key={id}>
+        <h2>•~Item Detail~•</h2>
+        {item && (
+          <>
+            <img src={item.imageUrl} alt="MOOOOOOOO" />
+            <h3>{item.name}</h3>
 
-              <button>
-                <Link
-                  to={location => ({
-                    ...location,
-                    pathname: `/edit/${details.id}`
-                  })}
-                >
-                  Edit Item
-                </Link>
-              </button>
-            </>
-          )}
-        </div>
+            <h4>Description:</h4>
+            <p>{item.description}</p>
+            <h4>Price:</h4>
+            <p>{item.price}</p>
+            <h4>Manufacturer:</h4>
+            <p>{item.manufacturer}</p>
+            <h4>Condition</h4>
+            <p>{item.condition.condition}</p>
+            <h4>Category</h4>
+            <p>{item.category.category}</p>
+            <h5>Created At</h5>
+            <p>{createdDate}</p>
+            <h5>Updated At</h5>
+            <p>{updatedDate}</p>
+
+            <button>
+              <Link
+                to={location => ({
+                  ...location,
+                  pathname: `/edit/${item.id}`
+                })}
+              >
+                Edit Item
+              </Link>
+            </button>
+          </>
+        )}
+
       </div>
     </Fragment>
   );
 };
 
 const mapStateToProps = state => {
+  console.log(state)
   return { item: state.item };
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './Header.module.scss'
+import styles from './Header.module.scss';
+import { Link } from "react-router-dom";
 
 const Header = ({ isAuth, setAuth, setLogin, setSidebarOn, sidebarOn }) => {
 
@@ -14,9 +15,9 @@ const Header = ({ isAuth, setAuth, setLogin, setSidebarOn, sidebarOn }) => {
 
     return (
         <header>
-            <div className={styles.logo}>
+            <Link to="/" className={styles.logo}>
                 <img src="https://www.badmckinney.dev/static/893e1c51d66ba434dee2809cda645d8a/e8897/brad-and-wife.jpg" alt="brad logo"></img>
-            </div>
+            </Link>
 
             <div className={styles.right}>
                 {isAuth && <span>Hello, User</span>}
