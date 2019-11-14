@@ -1,0 +1,41 @@
+@import "../../../index.scss";
+
+.auth_edit_item {
+  width: 50%;
+  margin: 0 auto;
+  padding: 5vh 0;
+
+  input {
+    width: 100%;
+    padding: 10px;
+
+    &:focus {
+      outline-color: $pink;
+    }
+  }
+
+  select {
+    border: 1px solid $pink;
+    background: none;
+    padding: 10px 20px;
+    color: $pink;
+
+    &:focus {
+      outline: $teal;
+    }
+  }
+
+  .file_input {
+    padding: 10px 0;
+  }
+
+  .submit_btn {
+    background: $pink;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1.2rem;
+    width: fit-content;
+    color: $white;
+    margin-top: 20px;
+  }
+}
