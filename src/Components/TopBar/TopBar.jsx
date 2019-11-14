@@ -23,10 +23,18 @@ const TopBar = ({ isAuth, sidebarOn }) => {
                     </Fragment> :
                     <Fragment>
                         {/* Replace these with the real routes later */}
-                        <li><Link to="/dodge">Software</Link></li>
-                        <li><Link to="/ford">Hardware</Link></li>
-                        <li><Link to="/toyota">Accessories</Link></li>
-                        <li><Link to="/misc">Misc</Link></li>
+                        <li>
+                            <Link to="/software">Software</Link>
+                        </li>
+                        <li>
+                            <Link to="/hardware">Hardware</Link>
+                        </li>
+                        <li>
+                            <Link to="/accessories">Accessories</Link>
+                        </li>
+                        <li>
+                            <Link to="/miscellaneous">Misc</Link>
+                        </li>
                         <button><Link to="/all">ALL</Link></button>
                     </Fragment>
                 }
