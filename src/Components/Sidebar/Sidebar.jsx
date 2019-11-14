@@ -27,16 +27,16 @@ const Sidebar = ({ isAuth }) => {
             <Fragment>
               {/* Replace these with the real routes later */}
               <li>
-                <Link to="/dodge">Software</Link>
+                <Link to="/software">Software</Link>
               </li>
               <li>
-                <Link to="/ford">Hardware</Link>
+                <Link to="/hardware">Hardware</Link>
               </li>
               <li>
-                <Link to="/toyota">Accessories</Link>
+                <Link to="/accessories">Accessories</Link>
               </li>
               <li>
-                <Link to="/misc">Misc</Link>
+                <Link to="/miscellaneous">Misc</Link>
               </li>
               <button>
                 <Link to="/all">ALL</Link>
