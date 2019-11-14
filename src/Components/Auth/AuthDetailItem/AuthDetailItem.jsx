@@ -7,7 +7,8 @@ const AuthDetailItem = ({ ...props }) => {
   const { dispatch, item, match } = props;
   const id = parseInt(match.params.id);
   const details = item.initialState;
-  console.log("details:::", details);
+  const createdDate = details && new Date(details.created_at).toUTCString();
+  const updatedDate = details && new Date(details.updated_at).toUTCString();
 
   useEffect(() => {
     dispatch(loadItemAsync(id));
@@ -36,6 +37,21 @@ const AuthDetailItem = ({ ...props }) => {
             <p>{details.condition.condition}</p>
             <h4>Category</h4>
             <p>{details.category.category}</p>
+            <h5>Created At</h5>
+            <p>{createdDate}</p>
+            <h5>Updated At</h5>
+            <p>{updatedDate}</p>
+
+            <button>
+              <Link
+                to={location => ({
+                  ...location,
+                  pathname: `/edit/${details.id}`
+                })}
+              >
+                Edit Item
+              </Link>
+            </button>
           </>
         )}
       </div>

@@ -25,17 +25,22 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/new',singleUpload, (req, res) => {
+    console.log(req)
     let newItem = {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        manufacturer: req.body.manufacturer,
-        imageUrl: req.file.location,
+        manufacturer: req.body.make,
         user_id: 1,
-        category_id: 1,
-        itemStatus_id: 1,
-        condition_id: 1
+        category_id: req.body.category,
+        itemStatus_id: req.body.itemStatus,
+        condition_id: req.body.condition
     };
+    if(!req.file){
+        newItem.imageUrl = 'https://consume-more-stuff-images.s3-us-west-2.amazonaws.com/1572740907680'
+    }else{
+        newItem.imageUrl = req.file.location
+    }
     return req.db.Items.forge(newItem)
         .save()
         .then(() => {
@@ -43,7 +48,7 @@ router.post('/new',singleUpload, (req, res) => {
         })
         .catch((error) => {
             console.log('Error: ', error);
-            res.status(500).json({ message: 'Could not ;post item.' })
+            res.status(500).json({ message: 'Could not post item.' })
         });
 });
 
