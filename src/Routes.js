@@ -9,7 +9,8 @@ import AuthDetailItem from "./Components/Auth/AuthDetailItem";
 import UnAuth from "./Components/UnAuth";
 import UnAuthDetailItem from './Components/UnAuthDetailItem';
 import Software from './Components/Software';
-import Hardware from './Components/Hardware'
+import Hardware from './Components/Hardware';
+import Accessories from './Components/Accessories';
 
 //need to change to logged out routes but logged in for now...
 export const routes = [
@@ -62,6 +63,11 @@ export const routes = [
     path: '/hardware',
     exact: true,
     component: Hardware
+  },
+  {
+    path: '/accessories',
+    exact: true,
+    component: Accessories
   }
 ];
 
