@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import styles from './UnAuth.module.scss'
+import styles from './Software.module.scss'
 import { useLocation } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { loadItemsAsync } from '../../actions';
 import Filter from '../Filter';
 
-const UnAuth = (props) => {
+const Software = (props) => {
     const location = useLocation().pathname.slice(1);
     const { dispatch, items } = props;
 
@@ -28,14 +28,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(UnAuth);
-
-
-// {routes.map(route => (
-//     <Route
-//         key={route.path}
-//         path={route.path}
-//         exact={route.exact}
-//         component={route.main}
-//     />
-// ))}
+export default connect(mapStateToProps)(Software);

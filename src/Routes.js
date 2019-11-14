@@ -8,6 +8,7 @@ import AuthEditItem from "./Components/Auth/AuthEditItem";
 import AuthDetailItem from "./Components/Auth/AuthDetailItem";
 import UnAuth from "./Components/UnAuth";
 import UnAuthDetailItem from './Components/UnAuthDetailItem';
+import Software from './Components/Software';
 
 //need to change to logged out routes but logged in for now...
 export const routes = [
@@ -50,6 +51,11 @@ export const routes = [
     path: "/edit/:id",
     exact: true,
     component: AuthEditItem
+  },
+  {
+    path: '/software',
+    exact: true,
+    component: Software
   }
 ];
 

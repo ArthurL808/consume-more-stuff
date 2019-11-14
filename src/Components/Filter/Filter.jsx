@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 
 const Filter = ({ filter, items }) => {
+
     function setFilterElem(event, sub) {
         return event.toLowerCase() === 'all' ? sub.toLowerCase() : event.toLowerCase();
     }
-
 
     return (
         <div>
@@ -15,7 +15,7 @@ const Filter = ({ filter, items }) => {
             <div className={styles.container}>
                 {!!items === true && items.map(
                     (item, index) =>
-                        item.manufacturer.toLowerCase() === setFilterElem(filter, item.manufacturer) &&
+                        item.category.category.toLowerCase() === setFilterElem(filter, item.category.category) &&
                         <div key={index} className={styles.product_card}>
                             <div className={styles.img_container}>
                                 <Link
