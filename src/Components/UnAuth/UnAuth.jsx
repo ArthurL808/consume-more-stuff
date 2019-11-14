@@ -27,7 +27,6 @@ const UnAuth = (props) => {
 
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         items: state.items.items
     }
