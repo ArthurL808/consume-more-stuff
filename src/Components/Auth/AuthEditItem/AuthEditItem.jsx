@@ -48,19 +48,16 @@ class AuthEditItem extends Component {
         this.setState({ price: event.target.value });
         break;
       case "condition":
-        this.setState({ condition: parseInt(event.target.value) });
+        this.setState({ condition_id: parseInt(event.target.value) });
         break;
       case "manufacturer":
         this.setState({ manufacturer: event.target.value });
         break;
-      case "note":
-        this.setState({ note: event.target.value });
-        break;
       case "category":
-        this.setState({ category: parseInt(event.target.value) });
+        this.setState({ category_id: parseInt(event.target.value) });
         break;
       case "itemStatus":
-        this.setState({ itemStatus: parseInt(event.target.value) });
+        this.setState({ itemStatus_id: parseInt(event.target.value) });
         break;
       case "image":
         this.setState({ image: event.target.files[0] });
@@ -78,6 +75,7 @@ class AuthEditItem extends Component {
 
       return formData;
     }
+    console.log(this.state)
     const data = getFormData(this.state);
     const id = parseInt(this.props.match.params.id);
     this.props.editItem(id, data);
@@ -128,7 +126,7 @@ class AuthEditItem extends Component {
               {/* THIS ONE SHOULD BE A DROP DOWN */}
               <h3>Condition</h3>
               <select
-                value={this.state.condition}
+                value={this.state.condition_id}
                 name="condition"
                 onChange={this.handleChange}
               >
@@ -142,7 +140,7 @@ class AuthEditItem extends Component {
               {/* THIS ONE SHOULD BE A DROP DOWN */}
               <h3>Category</h3>
               <select
-                value={this.state.category}
+                value={this.state.category_id}
                 name="category"
                 onChange={this.handleChange}
               >
@@ -157,7 +155,7 @@ class AuthEditItem extends Component {
               {/* THIS ONE SHOULD BE A DROP DOWN */}
               <h3>Status</h3>
               <select
-                value={this.state.itemStatus}
+                value={this.state.itemStatus_id}
                 name="itemStatus"
                 onChange={this.handleChange}
               >
