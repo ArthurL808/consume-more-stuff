@@ -17,32 +17,32 @@ const Sidebar = ({ isAuth }) => {
               <Link to="/messages">Messages</Link>
             </li>
             <li>
-              <Link to="/settings">Setting</Link>
+              <Link to="/settings">Settings</Link>
             </li>
             <button>
               <Link to="/new">new</Link>
             </button>
           </Fragment>
         ) : (
-          <Fragment>
-            {/* Replace these with the real routes later */}
-            <li>
-              <Link to="/dodge">Software</Link>
-            </li>
-            <li>
-              <Link to="/ford">Hardware</Link>
-            </li>
-            <li>
-              <Link to="/toyota">Accessories</Link>
-            </li>
-            <li>
-              <Link to="/misc">Misc</Link>
-            </li>
-            <button>
-              <Link to="/all">ALL</Link>
-            </button>
-          </Fragment>
-        )}
+            <Fragment>
+              {/* Replace these with the real routes later */}
+              <li>
+                <Link to="/dodge">Software</Link>
+              </li>
+              <li>
+                <Link to="/ford">Hardware</Link>
+              </li>
+              <li>
+                <Link to="/toyota">Accessories</Link>
+              </li>
+              <li>
+                <Link to="/misc">Misc</Link>
+              </li>
+              <button>
+                <Link to="/all">ALL</Link>
+              </button>
+            </Fragment>
+          )}
       </ul>
     </div>
   );
