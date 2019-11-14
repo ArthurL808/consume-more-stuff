@@ -87,7 +87,7 @@ class AuthNewItem extends Component {
           <div>
             <h3>Price</h3>
             <input
-              type="text"
+              type="number" min="0.01" step="0.01"
               name="price"
               value={this.state.price}
               onChange={this.handleChange}
