@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { loadItemsAsync } from '../../actions';
 import Filter from '../Filter';
 
-const Software = (props) => {
+const Misc = (props) => {
     const location = useLocation().pathname.slice(1);
     const { dispatch, items } = props;
 
@@ -27,4 +27,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Software);
+export default connect(mapStateToProps)(Misc);

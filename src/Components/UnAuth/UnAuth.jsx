@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import styles from './UnAuth.module.scss'
 import { useLocation } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { loadItemsAsync } from '../../actions';
@@ -14,10 +13,10 @@ const UnAuth = (props) => {
     }, [dispatch])
 
     return (
-        <div className={styles.container}>
+        <div className="container">
             {/* Change filter to location once the real seeds are setup */}
             {items.length > 0 && <Filter items={items} filter={location} />}
-        </div>
+        </div >
     )
 }
 
