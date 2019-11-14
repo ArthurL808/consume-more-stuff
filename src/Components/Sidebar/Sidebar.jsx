@@ -36,7 +36,7 @@ const Sidebar = ({ isAuth }) => {
                 <Link to="/accessories">Accessories</Link>
               </li>
               <li>
-                <Link to="/misc">Misc</Link>
+                <Link to="/miscellaneous">Misc</Link>
               </li>
               <button>
                 <Link to="/all">ALL</Link>
