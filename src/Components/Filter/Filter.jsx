@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Filter.module.scss'
+import { Link } from "react-router-dom";
 
 
 const Filter = ({ filter, items }) => {
@@ -17,7 +18,14 @@ const Filter = ({ filter, items }) => {
                         item.manufacturer.toLowerCase() === setFilterElem(filter, item.manufacturer) &&
                         <div key={index} className={styles.product_card}>
                             <div className={styles.img_container}>
-                                <img src={item.imageUrl} alt={item.name} />
+                                <Link
+                                    to={location => ({
+                                        ...location,
+                                        pathname: `/unauth/item/${item.id}`
+                                    })}
+                                >
+                                    <img src={item.imageUrl} alt={item.name} />
+                                </Link>
                             </div>
                             <h4>{item.name}</h4>
                             <p>{item.status}</p>

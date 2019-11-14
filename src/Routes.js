@@ -7,6 +7,7 @@ import AuthSettings from "./Components/Auth/AuthSettings";
 import AuthEditItem from "./Components/Auth/AuthEditItem";
 import AuthDetailItem from "./Components/Auth/AuthDetailItem";
 import UnAuth from "./Components/UnAuth";
+import UnAuthDetailItem from './Components/UnAuthDetailItem';
 
 //need to change to logged out routes but logged in for now...
 export const routes = [
@@ -15,9 +16,11 @@ export const routes = [
     exact: true,
     component: AuthHome
   },
-  {path: '/all',
-   exact: true,
-  component: UnAuth},
+  {
+    path: '/all',
+    exact: true,
+    component: UnAuth
+  },
   {
     path: "/new",
     exact: true,
@@ -37,6 +40,11 @@ export const routes = [
     path: "/item/:id",
     exact: true,
     component: AuthDetailItem
+  },
+  {
+    path: '/unauth/item/:id',
+    exact: true,
+    component: UnAuthDetailItem
   },
   {
     path: "/edit/:id",
