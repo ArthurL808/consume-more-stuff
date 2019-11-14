@@ -23,12 +23,16 @@ class AuthEditItem extends Component {
   }
   
   componentDidMount() {
+    console.log(this.props)
     const {loadItem, match} = this.props
 
     loadItem(match.params.id)
     this.setState(this.props.item)
   }
-  
+  componentDidUpdate(prevProps){
+    if(this.props.item !== prevProps.item)
+    this.setState(this.props.item)
+  }
   handleChange(event) {
     switch (event.target.name) {
       case "name":
@@ -183,7 +187,7 @@ class AuthEditItem extends Component {
         </div>
       </form>
       
-      <input className={styles.submit_btn} type="button" value="Delete Item" onClick={this.handleDelete}/>
+      <button className={styles.submit_btn} onClick={this.handleDelete}> Delete Item </button>
       </>
     );
   }
@@ -194,6 +198,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(editItemAsync(id,item));
     },
     loadItem: item => {
+      console.log(item)
       dispatch(loadItemAsync(item));
     },
     deleteItem: id => {
