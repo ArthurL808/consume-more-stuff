@@ -20,6 +20,10 @@ const AuthDetailItem = ({ ...props }) => {
         <Link to="/">Go Back</Link>
       </button>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 410de2d07734727a84b0539b83c0a866e1f0ecbf
       <div key={id}>
         <h2>•~Item Detail~•</h2>
         {item && (
@@ -54,6 +58,10 @@ const AuthDetailItem = ({ ...props }) => {
             </button>
           </>
         )}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 410de2d07734727a84b0539b83c0a866e1f0ecbf
       </div>
     </Fragment>
   );
