@@ -82,6 +82,7 @@ class AuthEditItem extends Component {
   }
 
   handleDelete() {
+
     const { deleteItem, match } = this.props;
 
     deleteItem(match.params.id);
