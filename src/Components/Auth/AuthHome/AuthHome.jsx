@@ -5,9 +5,6 @@ import { connect } from "react-redux";
 import { loadItemsAsync } from "../../../actions";
 
 class AuthHome extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     this.props.dispatch(loadItemsAsync());
   }
