@@ -5,10 +5,11 @@ $elements: 4;
 .authHome_container {
   position: relative;
   width: 100%;
+  padding: 20px 50px;
 
   @for $i from 0 to $elements {
     div:nth-child(#{$i + 1}) {
-      top: $i * 25vw;
+      top: $i * 30em;
     }
   }
 }
