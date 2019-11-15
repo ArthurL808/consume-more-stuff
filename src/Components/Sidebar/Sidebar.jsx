@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Sidebar = ({ isAuth }) => {
   return (
     <div className={styles.sidebar}>
-      {!isAuth && <h3>Home</h3>}
+      {!isAuth && <Link to="/" className={styles.home_btn}>Home</Link>}
 
       <ul className={styles.sidebar_links}>
         {isAuth ? (
