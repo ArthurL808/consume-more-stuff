@@ -12,7 +12,7 @@ const AuthDetailItem = ({ ...props }) => {
 
   useEffect(() => {
     dispatch(loadItemAsync(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <Fragment>
@@ -36,7 +36,9 @@ const AuthDetailItem = ({ ...props }) => {
                   Edit Item
                 </Link>
               </button>
+              {/* <button onClick={this.handleDelete}> Delete Item </button> */}
             </div>
+
             <div className={styles.detailText}>
               <h4>Description:</h4>
               <p>{item.description}</p>

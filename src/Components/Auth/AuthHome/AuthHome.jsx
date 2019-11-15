@@ -13,12 +13,15 @@ class AuthHome extends Component {
   }
 
   render() {
+    console.log("this is my props", this.props.items.items);
     return (
-      <div className={styles.authHome_container}>
-        <AuthHomeFilter items={this.props.items} filter={"pending"} />
-        <AuthHomeFilter items={this.props.items} filter={"published"} />
-        <AuthHomeFilter items={this.props.items} filter={"sold"} />
-      </div>
+      <>
+        <div className={styles.authHome_container}>
+          <AuthHomeFilter items={this.props.items} filter={"pending"} />
+          <AuthHomeFilter items={this.props.items} filter={"published"} />
+          <AuthHomeFilter items={this.props.items} filter={"sold"} />
+        </div>
+      </>
     );
   }
 }

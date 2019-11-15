@@ -12,10 +12,12 @@ class AuthHomeFilter extends Component {
     };
   }
 
+  //move item display right
   increment = () => {
     this.setState({ value: this.state.value + 250 });
   };
 
+  //move item display left
   decrease = () => {
     this.setState({ value: this.state.value - 250 });
   };
@@ -56,7 +58,7 @@ class AuthHomeFilter extends Component {
                               <img src={item.imageUrl} alt="Meow" />
                             </div>
                           </Link>
-                          <h3>Name: {item.name}</h3>
+                          <h3>{item.name}</h3>
                           <p>Manufacturer: {item.manufacturer}</p>
                           <p>Price: {item.price}</p>
                         </div>
