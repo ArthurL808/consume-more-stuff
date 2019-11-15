@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./MainBody.module.scss";
-// IMPORT ALL BODY COMPOENENTS HERE
-import UnAuth from "../UnAuth";
 
 import Routes from "../../Routes";
 

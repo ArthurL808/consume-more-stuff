@@ -62,10 +62,10 @@ router.put("/:id", singleUpload, (req, res) => {
     itemStatus_id: req.body.itemStatus_id,
     condition_id: req.body.condition_id
   };
-  if (!req.file) {
-      newItem.imageUrl = req.body.imageUrl;
-} else if(!req.body.imageUrl){
+  if (req.file) {
     newItem.imageUrl = req.file.location;
+  } else if(req.body.imageUrl && !req.file){
+    newItem.imageUrl = req.body.imageUrl;
   }else{
       newItem.imageUrl = 'https://consume-more-stuff-images.s3-us-west-2.amazonaws.com/1572740907680'
   }
