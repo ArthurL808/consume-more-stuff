@@ -15,12 +15,11 @@ const AuthDetailItem = ({ ...props }) => {
   }, [dispatch, id]);
 
   return (
-    <div className="container">
+    <div>
       <button>
         <Link to="/">Go Back</Link>
       </button>
-      <div key={id} id={styles.detail_container}>
-        <h2>•~Item Detail~•</h2>
+      <div key={id} id={styles.detail_container} className="container">
         {item && (
           <>
             <img src={item.imageUrl} alt={item.name} />
