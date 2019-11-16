@@ -1,0 +1,28 @@
+@import "../../index.scss";
+
+.back_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+#detail_container {
+  h3 {
+    font-size: 4rem;
+    color: $teal;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 1.7rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+  }
+}
