@@ -1,0 +1,148 @@
+@import "./index.scss";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: $body-font;
+  color: $black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $body-font;
+  background: $white;
+  color: $black;
+
+  &::-webkit-scrollbar {
+    width: 1em;
+    background: $black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $pink;
+    outline: 1px solid $pink;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* #TYPOGRAPHY  */
+/* Reference
+	62.5%  => 10px
+	68.8%  => 11px
+	75%    => 12px
+	81.3%  => 13px
+	87.5%  => 14px
+	100%   => 16px
+	112.5% => 18px
+	125%   => 20px
+*/
+body {
+  font-family: $body-font;
+  color: $black;
+  font-size: 87.5%; /* 14px; */
+  line-height: 1.5em; /* 14px x 1.5em = 21px */
+}
+
+/* #HEADINGS
+      Based on a Traditional Typographic Scale
+      48, 36, 24, 21, 18, 16
+  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+  margin: 0.5em 0;
+}
+
+h1 {
+  font-size: 3em; /* 48px / 16px = 3em */
+  line-height: 1em;
+}
+
+h2 {
+  font-size: 2.25em; /* 36px / 16px = 2.25em */
+  line-height: 1.1em;
+}
+
+h3 {
+  font-size: 1.5em; /* 24px / 16px = 1.5em */
+  line-height: 1.2em;
+}
+
+h4 {
+  font-size: 1.3125em; /* 21px / 16px = 1.3125em */
+  line-height: 1.3em;
+}
+
+h5 {
+  font-size: 1.125em; /* 18px / 16px = 1.125em */
+  line-height: 1.4em;
+}
+
+h6 {
+  font-size: 1em; /* 16px / 16px = 1em */
+  line-height: 1.5em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $header-font;
+  text-transform: uppercase;
+  color: $pink;
+}
+
+h4,
+h5,
+h6 {
+  color: $black;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: $pink;
+  border: none;
+  color: $white;
+  padding: 10px 20px;
+
+  * {
+    color: $white;
+  }
+}
+
+/* #PARAGRAPHS */
+p {
+  margin: 0 0 0.5em 0;
+  max-width: 38em;
+}
+
+/* #LINKS */
+a {
+  color: $teal;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $pink;
+}

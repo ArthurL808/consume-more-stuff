@@ -19,7 +19,7 @@ const UnAuthDetailItem = ({ ...props }) => {
                 <Link to="/all">Go Back</Link>
             </button>
 
-            <div key={id}>
+            <div key={id} className="container">
                 <h2>•~Item Detail~•</h2>
                 {item && (
                     <>

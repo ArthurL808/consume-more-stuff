@@ -15,7 +15,7 @@ const AuthDetailItem = ({ ...props }) => {
   }, [dispatch, id]);
 
   return (
-    <Fragment>
+    <div className="container">
       <button>
         <Link to="/">Go Back</Link>
       </button>
@@ -54,7 +54,7 @@ const AuthDetailItem = ({ ...props }) => {
           </>
         )}
       </div>
-    </Fragment>
+    </div>
   );
 };
 
