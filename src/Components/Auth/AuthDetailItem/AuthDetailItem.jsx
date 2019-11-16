@@ -60,7 +60,6 @@ const AuthDetailItem = ({ ...props }) => {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
   return { item: state.item };
 };
 
