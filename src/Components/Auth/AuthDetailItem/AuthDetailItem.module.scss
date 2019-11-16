@@ -3,12 +3,20 @@
 .img_container {
   height: 80vh;
   width: 100%;
+  overflow: hidden;
 
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
+}
+
+.back_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 #detail_container {

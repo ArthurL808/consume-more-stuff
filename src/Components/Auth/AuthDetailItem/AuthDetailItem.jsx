@@ -16,7 +16,7 @@ const AuthDetailItem = ({ ...props }) => {
 
   return (
     <div>
-      <button>
+      <button className={styles.back_btn}>
         <Link to="/">Go Back</Link>
       </button>
       <div key={id} id={styles.detail_container} className="container">
