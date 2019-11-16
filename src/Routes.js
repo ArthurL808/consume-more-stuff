@@ -17,14 +17,14 @@ import Misc from './Components/Misc';
 //need to change to logged out routes but logged in for now...
 export const routes = [
   {
-    path: "/",
-    exact: true,
-    component: AuthHome
-  },
-  {
-    path: '/all',
+    path: '/',
     exact: true,
     component: UnAuth
+  },
+  {
+    path: "/all",
+    exact: true,
+    component: AuthHome
   },
   {
     path: "/new",
