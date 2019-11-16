@@ -44,6 +44,16 @@ body {
   font-family: $body-font;
   background: $white;
   color: $black;
+
+  &::-webkit-scrollbar {
+    width: 1em;
+    background: $black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $pink;
+    outline: 1px solid $pink;
+  }
 }
 
 ul {

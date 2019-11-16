@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { loadItemAsync } from "../../../actions";
 import { Link } from "react-router-dom";
+import styles from "./AuthDetailItem.module.scss";
 
 const AuthDetailItem = ({ ...props }) => {
   const { dispatch, item, match } = props;
@@ -18,7 +19,6 @@ const AuthDetailItem = ({ ...props }) => {
       <button>
         <Link to="/">Go Back</Link>
       </button>
-
       <div key={id}>
         <h2>•~Item Detail~•</h2>
         {item && (
@@ -59,6 +59,7 @@ const AuthDetailItem = ({ ...props }) => {
 };
 
 const mapStateToProps = state => {
+  console.log(state);
   return { item: state.item };
 };
 
