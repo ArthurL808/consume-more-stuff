@@ -2,7 +2,13 @@
 
 #detail_container {
   h3 {
-    font-size: 2rem;
+    font-size: 4rem;
+    color: $teal;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 
   h4 {

@@ -16,31 +16,34 @@ const UnAuthDetailItem = ({ ...props }) => {
 
     return (
         <Fragment>
-            <button>
+            <button className={styles.back_btn}>
                 <Link to="/all">Go Back</Link>
             </button>
 
-            <div key={id} id={styles.detail_container} className="container">
-                <h2>•~Item Detail~•</h2>
+            <div key={id} id={styles.detail_container} >
                 {item && (
                     <>
                         <img src={item.imageUrl} alt={item.name} />
-                        <h3>{item.name}</h3>
 
-                        <h4>Description:</h4>
-                        <p>{item.description}</p>
-                        <h4>Price:</h4>
-                        <p>{item.price}</p>
-                        <h4>Manufacturer:</h4>
-                        <p>{item.manufacturer}</p>
-                        <h4>Condition</h4>
-                        <p>{item.condition.condition}</p>
-                        <h4>Category</h4>
-                        <p>{item.category.category}</p>
-                        <h5>Created At</h5>
-                        <p>{createdDate}</p>
-                        <h5>Updated At</h5>
-                        <p>{updatedDate}</p>
+                        <div className="container">
+                            <h3>{item.name}</h3>
+
+                            <h4>Description:</h4>
+                            <p>{item.description}</p>
+                            <h4>Price:</h4>
+                            <p>{item.price}</p>
+                            <h4>Manufacturer:</h4>
+                            <p>{item.manufacturer}</p>
+                            <h4>Condition</h4>
+                            <p>{item.condition.condition}</p>
+                            <h4>Category</h4>
+                            <p>{item.category.category}</p>
+                            <h5>Created At</h5>
+                            <p>{createdDate}</p>
+                            <h5>Updated At</h5>
+                            <p>{updatedDate}</p>
+                        </div>
+
                     </>
                 )}
             </div>
