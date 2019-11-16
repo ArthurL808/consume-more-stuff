@@ -56,5 +56,8 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
-
-export default connect(null, mapDispatchToProps)(Header);
+const mapStateToProps = state => {
+  console.log(state)
+  return {user:state.user}
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
