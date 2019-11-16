@@ -8,7 +8,7 @@ import LoginForm from "../LoginForm";
 import { withRouter } from "react-router";
 
 function App(props) {
-  const [isAuth, setAuth] = useState(true);
+  const [isAuth, setAuth] = useState(false);
   const [sidebarOn, setSidebarOn] = useState(false);
   const [login, setLogin] = useState(false);
 

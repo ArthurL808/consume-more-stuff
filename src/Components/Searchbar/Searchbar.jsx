@@ -1,31 +1,32 @@
-import React, { useEffect } from "react";
+import React, { Component } from "react";
 import { loadItemsAsync } from "../../actions";
 import { connect } from "react-redux";
 
-const Searchbar = data => {
-  const { dispatch, items } = data;
-  console.log("data in search", data);
+class Searchbar extends Component {
+  constructor(props) {
+    super(props);
+  }
+  state = {};
 
-  useEffect(() => {
-    dispatch(loadItemsAsync());
-  }, [dispatch]);
+  componentDidMount() {
+    this.props.dispatch(loadItemsAsync());
+  }
 
-  return (
-    <div>
-      {/* <input
+  render() {
+    return (
+      <input
         type="text"
-        value={this.state.searchString}
-        ref="search"
+        placeholder="Search by item name..."
+        name="search"
+        value={this.props.items.name}
         onChange={this.handleChange}
-        placeholder="type name here"
-      /> */}
-      <input type="text" placeholder="Search by item name..." name="search" />
-    </div>
-  );
-};
+      />
+    );
+  }
+}
 
 const mapStateToProps = state => {
-  return { item: state.items.items };
+  return { items: state.items };
 };
 
 export default connect(mapStateToProps)(Searchbar);

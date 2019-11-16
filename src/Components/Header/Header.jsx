@@ -32,7 +32,7 @@ const Header = ({
       </Link>
 
       <div className={styles.right}>
-        {isAuth && <span>Hello, User</span>}
+        {isAuth ? <span>Logged In</span> : <span>logged out</span>}
 
         <button
           className={styles.toggle_sidebar}
