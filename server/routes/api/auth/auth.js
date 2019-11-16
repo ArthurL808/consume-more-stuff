@@ -48,6 +48,7 @@ router.post(
 
 
 router.post("/register", (req, res) => {
+  console.log(req.body)
     bcrypt.genSalt(saltRounds, (err, salt) => {
         if (err) {
             console.log(err);
