@@ -10,7 +10,8 @@ const Header = ({
   setLogin,
   setSidebarOn,
   sidebarOn,
-  logout
+  logout,
+  user
 }) => {
   function verifyAuth() {
     if (isAuth) {
@@ -32,7 +33,7 @@ const Header = ({
       </Link>
 
       <div className={styles.right}>
-        {isAuth ? <span>Logged In</span> : <span>logged out</span>}
+        {isAuth && <h3>Hello {user}</h3>}
 
         <button
           className={styles.toggle_sidebar}
