@@ -15,48 +15,46 @@ const AuthDetailItem = ({ ...props }) => {
   }, [dispatch, id]);
 
   return (
-    <Fragment>
+    <div className="container">
       <button>
         <Link to="/">Go Back</Link>
       </button>
-
-      <div key={id} className={styles.detailBody}>
+      <div key={id} id={styles.detail_container}>
+        <h2>•~Item Detail~•</h2>
         {item && (
           <>
-            <div className={styles.imageAndName}>
-              <h2>{item.name}</h2>
-              <img src={item.imageUrl} alt="MOOOOOOOO" />
-              <button>
-                <Link
-                  to={location => ({
-                    ...location,
-                    pathname: `/edit/${item.id}`
-                  })}
-                >
-                  Edit Item
-                </Link>
-              </button>
-            </div>
-            <div className={styles.detailText}>
-              <h4>Description:</h4>
-              <p>{item.description}</p>
-              <h4>Price:</h4>
-              <p>{item.price}</p>
-              <h4>Manufacturer:</h4>
-              <p>{item.manufacturer}</p>
-              <h4>Condition:</h4>
-              <p>{item.condition.condition}</p>
-              <h4>Category:</h4>
-              <p>{item.category.category}</p>
-              <h4>Created At:</h4>
-              <p>{createdDate}</p>
-              <h4>Updated At:</h4>
-              <p>{updatedDate}</p>
-            </div>
+            <img src={item.imageUrl} alt={item.name} />
+            <h3>{item.name}</h3>
+
+            <h4>Description:</h4>
+            <p>{item.description}</p>
+            <h4>Price:</h4>
+            <p>{item.price}</p>
+            <h4>Manufacturer:</h4>
+            <p>{item.manufacturer}</p>
+            <h4>Condition</h4>
+            <p>{item.condition.condition}</p>
+            <h4>Category</h4>
+            <p>{item.category.category}</p>
+            <h5>Created At</h5>
+            <p>{createdDate}</p>
+            <h5>Updated At</h5>
+            <p>{updatedDate}</p>
+
+            <button>
+              <Link
+                to={location => ({
+                  ...location,
+                  pathname: `/edit/${item.id}`
+                })}
+              >
+                Edit Item
+              </Link>
+            </button>
           </>
         )}
       </div>
-    </Fragment>
+    </div>
   );
 };
 

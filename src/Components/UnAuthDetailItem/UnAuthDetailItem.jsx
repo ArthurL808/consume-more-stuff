@@ -2,13 +2,13 @@ import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { loadItemAsync } from "../../actions";
 import { Link } from "react-router-dom";
+import styles from './UnAuthDetailItem.module.scss'
 
 const UnAuthDetailItem = ({ ...props }) => {
     const { dispatch, item, match } = props;
     const id = parseInt(match.params.id);
-    const details = item.initialState;
-    const createdDate = details && new Date(details.created_at).toUTCString();
-    const updatedDate = details && new Date(details.updated_at).toUTCString();
+    const createdDate = item && new Date(item.created_at).toUTCString();
+    const updatedDate = item && new Date(item.updated_at).toUTCString();
 
     useEffect(() => {
         dispatch(loadItemAsync(id));
@@ -20,23 +20,23 @@ const UnAuthDetailItem = ({ ...props }) => {
                 <Link to="/all">Go Back</Link>
             </button>
 
-            <div key={id}>
+            <div key={id} id={styles.detail_container} className="container">
                 <h2>•~Item Detail~•</h2>
-                {details && (
+                {item && (
                     <>
-                        <img src={details.imageUrl} alt="MOOOOOOOO" />
-                        <h3>{details.name}</h3>
+                        <img src={item.imageUrl} alt={item.name} />
+                        <h3>{item.name}</h3>
 
                         <h4>Description:</h4>
-                        <p>{details.description}</p>
+                        <p>{item.description}</p>
                         <h4>Price:</h4>
-                        <p>{details.price}</p>
+                        <p>{item.price}</p>
                         <h4>Manufacturer:</h4>
-                        <p>{details.manufacturer}</p>
+                        <p>{item.manufacturer}</p>
                         <h4>Condition</h4>
-                        <p>{details.condition.condition}</p>
+                        <p>{item.condition.condition}</p>
                         <h4>Category</h4>
-                        <p>{details.category.category}</p>
+                        <p>{item.category.category}</p>
                         <h5>Created At</h5>
                         <p>{createdDate}</p>
                         <h5>Updated At</h5>
