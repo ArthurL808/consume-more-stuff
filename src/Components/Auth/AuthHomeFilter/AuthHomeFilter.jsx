@@ -21,7 +21,7 @@ class AuthHomeFilter extends Component {
   decrease = () => {
     this.setState({ value: this.state.value - 250 });
   };
-  
+
   render() {
     return (
       <>
@@ -46,7 +46,8 @@ class AuthHomeFilter extends Component {
                 {this.props.items &&
                   this.props.items.items.map(
                     item =>
-                     item.itemStatus && item.itemStatus.status === this.props.filter && (
+                      item.itemStatus &&
+                      item.itemStatus.status === this.props.filter && (
                         <div key={item.id}>
                           <Link
                             to={location => ({

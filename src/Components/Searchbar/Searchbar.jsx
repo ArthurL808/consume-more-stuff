@@ -1,32 +1,55 @@
-import React, { Component } from "react";
-import { loadItemsAsync } from "../../actions";
-import { connect } from "react-redux";
+// import React, { Component } from "react";
+// // import { loadItemsAsync } from "../../actions";
+// // import { connect } from "react-redux";
+// import { Link } from "react-router-dom";
 
-class Searchbar extends Component {
-  constructor(props) {
-    super(props);
-  }
-  state = {};
+// class Searchbar extends Component {
+//   constructor(props) {
+//     super(props);
 
-  componentDidMount() {
-    this.props.dispatch(loadItemsAsync());
-  }
+//     this.state = {
+//       query: ""
+//     };
+//   }
 
-  render() {
-    return (
-      <input
-        type="text"
-        placeholder="Search by item name..."
-        name="search"
-        value={this.props.items.name}
-        onChange={this.handleChange}
-      />
-    );
-  }
-}
+//   handleInputChange = () => {
+//     this.setState({
+//       query: this.search.value
+//     });
 
-const mapStateToProps = state => {
-  return { items: state.items };
-};
+//     const toLower = this.state.query.toLowerCase();
 
-export default connect(mapStateToProps)(Searchbar);
+//     this.props.items.map(item => {
+//       console.log(item.name.includes(toLower));
+//       if (item.name.includes(toLower)) {
+//         return item.id;
+//       }
+//     });
+//   };
+
+//   render() {
+//     return (
+//       <form>
+//         <input
+//           type="text"
+//           placeholder="Search by item name..."
+//           ref={input => (this.search = input)}
+//           onChange={this.handleInputChange}
+//         />
+//         <button>
+//           <Link
+//             to={location => ({
+//               ...location,
+//               pathname: `/item/${this.props.items.id}`
+//             })}
+//           >
+//             Search
+//           </Link>
+//         </button>
+//       </form>
+//     );
+//   }
+// }
+
+// // export default connect(mapStateToProps)(Searchbar);
+// export default Searchbar;
