@@ -33,7 +33,7 @@ const Header = ({
       </Link>
 
       <div className={styles.right}>
-        {isAuth && <h3>Hello {user}</h3>}
+        {isAuth && user.name && <h5>hello {user.name}</h5>}
 
         <button
           className={styles.toggle_sidebar}
@@ -58,7 +58,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 const mapStateToProps = state => {
-  console.log(state)
-  return {user:state.user}
+  return { user: state.user }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
