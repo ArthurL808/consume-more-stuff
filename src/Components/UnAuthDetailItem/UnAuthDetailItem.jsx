@@ -24,7 +24,7 @@ const UnAuthDetailItem = ({ ...props }) => {
                 <h2>•~Item Detail~•</h2>
                 {details && (
                     <>
-                        <img src={details.imageUrl} alt="MOOOOOOOO" />
+                        <img src={details.imageUrl} alt={details.name} />
                         <h3>{details.name}</h3>
 
                         <h4>Description:</h4>
