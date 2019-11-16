@@ -8,17 +8,18 @@ const LoginForm = ({ setAuth, setLogin, isAuth, ...props }) => {
   const [newUser, setNewUser] = useState(false);
   const [credentials, setCredentials] = useState({});
 
-  const {login, register} = props
+  const { login, register } = props
 
   function handleSubmit(event) {
     event.preventDefault();
-    if(newUser){
-    register(credentials);
-    }else {
-    login(credentials)
+    if (newUser) {
+      register(credentials);
+      setNewUser(false);
+    } else {
+      login(credentials);
+      setAuth(true);
+      setLogin(false);
     }
-    setAuth(true);
-    setLogin(false);
   }
 
   function handleChange(e) {
@@ -35,7 +36,7 @@ const LoginForm = ({ setAuth, setLogin, isAuth, ...props }) => {
   });
 
   return (
-    <animated.div className={styles.login_form} style={fade}>
+    <animated.div className={styles.login_form} style={fade} onClick={() => setLogin(false)}>
       <form onSubmit={handleSubmit}>
         {newUser && (
           <Fragment>
