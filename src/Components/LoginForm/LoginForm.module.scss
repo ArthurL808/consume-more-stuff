@@ -7,11 +7,11 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 99999999;
+  z-index: 999;
 }
 
 .login_form {
-  position: absolute;
+  position: fixed;
   top: calc(50% - 20vh);
   left: calc(50% - 15%);
   height: 40vh;
@@ -19,6 +19,7 @@
   background: $pink;
   display: grid;
   place-items: center;
+  z-index: 999999;
 
   form {
     display: flex;
