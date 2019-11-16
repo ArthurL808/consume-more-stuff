@@ -16,7 +16,7 @@ const TopBar = ({ isAuth, sidebarOn }) => {
             <ul className={styles.sidebar_links}>
                 {isAuth ?
                     <Fragment>
-                        <li><Link to="/home">Home</Link></li>
+                        <li><Link to="/all">Home</Link></li>
                         <li><Link to="/messages">Messages</Link></li>
                         <li><Link to="/settings">Setting</Link></li>
                         <button><Link to="/new">new</Link></button>
@@ -35,7 +35,7 @@ const TopBar = ({ isAuth, sidebarOn }) => {
                         <li>
                             <Link to="/miscellaneous">Misc</Link>
                         </li>
-                        <button><Link to="/all">ALL</Link></button>
+                        <button><Link to="/">ALL</Link></button>
                     </Fragment>
                 }
             </ul>

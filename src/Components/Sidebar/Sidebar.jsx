@@ -11,7 +11,7 @@ const Sidebar = ({ isAuth }) => {
         {isAuth ? (
           <Fragment>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/all">Home</Link>
             </li>
             <li>
               <Link to="/messages">Messages</Link>
@@ -39,7 +39,7 @@ const Sidebar = ({ isAuth }) => {
                 <Link to="/miscellaneous">Misc</Link>
               </li>
               <button>
-                <Link to="/all">ALL</Link>
+                <Link to="/">ALL</Link>
               </button>
             </Fragment>
           )}

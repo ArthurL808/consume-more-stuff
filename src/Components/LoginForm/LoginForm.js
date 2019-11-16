@@ -36,7 +36,7 @@ const LoginForm = ({ setAuth, setLogin, isAuth, ...props }) => {
   });
 
   return (
-    <animated.div className={styles.login_form} style={fade} onClick={() => setLogin(false)}>
+    <animated.div className={styles.login_form} style={fade}>
       <form onSubmit={handleSubmit}>
         {newUser && (
           <Fragment>

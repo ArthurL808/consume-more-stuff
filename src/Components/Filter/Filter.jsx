@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Filter = ({ filter, items }) => {
 
     function setFilterElem(event, sub) {
-        return event.toLowerCase() === 'all' ? sub.toLowerCase() : event.toLowerCase();
+        return event.toLowerCase() === '' ? sub.toLowerCase() : event.toLowerCase();
     }
 
     return (
