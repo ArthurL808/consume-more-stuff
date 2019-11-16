@@ -4,6 +4,9 @@ export const ADD_ITEM = "ADD_ITEM";
 export const LOAD_ITEM = "LOAD_ITEM";
 export const EDIT_ITEM = "EDIT_ITEM";
 export const DELETE_ITEM = "DELETE_ITEM";
+export const LOGIN = "LOGIN";
+export const REGISTER = "REGISTER";
+export const LOGOUT = "LOGOUT";
 
 export const loadItemsAsync = () => async dispatch => {
   fetch("/api/items")
@@ -54,7 +57,7 @@ export const addItemAsync = item => async dispatch => {
     });
 };
 
-export const editItemAsync = (id,item) => async dispatch => {
+export const editItemAsync = (id, item) => async dispatch => {
   fetch(`/api/items/${id}`, {
     method: "PUT",
     body: item
@@ -81,6 +84,53 @@ export const deleteItemAsync = id => async dispatch => {
     .then(body => {
       dispatch({
         type: DELETE_ITEM,
+        payload: body
+      });
+    });
+};
+
+export const login = user => async dispatch => {
+  fetch(`api/auth/login`, {
+    method: "POST",
+    body: user
+  })
+    .then(response => {
+      return response.json();
+    })
+    .then(body => {
+      dispatch({
+        type: LOGIN,
+        payload: body
+      });
+    });
+};
+
+export const register = user => async dispatch => {
+  fetch("api/auth/register", {
+    method: "POST",
+    body: user
+  })
+    .then(response => {
+      return response.json();
+    })
+    .then(body => {
+      dispatch({
+        type: REGISTER,
+        payload: body
+      });
+    });
+};
+
+export const logut = () => async dispatch => {
+  fetch("api/auth/logout", {
+    method: "POST"
+  })
+    .then(response => {
+      return response.json();
+    })
+    .then(body => {
+      dispatch({
+        type: LOGOUT,
         payload: body
       });
     });
