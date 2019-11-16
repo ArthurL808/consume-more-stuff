@@ -56,7 +56,7 @@ passport.deserializeUser(function (user, done) {
   return done(null, user);
 });
 
-app.use('/api', api.auth)
+app.use('/api/auth', api.auth)
 app.use('/api/items', api.items)
 app.use('/api/users', api.users)
 
