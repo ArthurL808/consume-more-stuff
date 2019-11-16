@@ -107,12 +107,13 @@ h2,
 h3 {
   font-family: $header-font;
   text-transform: uppercase;
-  color: $pink;
+  color: $black;
 }
 
 h4,
 h5,
 h6 {
+  font-family: $body-font;
   color: $black;
 }
 
@@ -139,10 +140,5 @@ p {
 
 /* #LINKS */
 a {
-  color: $teal;
   text-decoration: none;
-}
-
-a:hover {
-  color: $pink;
 }

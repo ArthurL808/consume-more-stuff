@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { connect } from "react-redux";
 import { loadItemAsync } from "../../actions";
 import { Link } from "react-router-dom";
+import styles from './UnAuthDetailItem.module.scss'
 
 const UnAuthDetailItem = ({ ...props }) => {
     const { dispatch, item, match } = props;
@@ -19,7 +20,7 @@ const UnAuthDetailItem = ({ ...props }) => {
                 <Link to="/all">Go Back</Link>
             </button>
 
-            <div key={id} className="container">
+            <div key={id} id={styles.detail_container} className="container">
                 <h2>•~Item Detail~•</h2>
                 {item && (
                     <>

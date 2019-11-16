@@ -19,7 +19,7 @@ const AuthDetailItem = ({ ...props }) => {
       <button>
         <Link to="/">Go Back</Link>
       </button>
-      <div key={id}>
+      <div key={id} id={styles.detail_container}>
         <h2>•~Item Detail~•</h2>
         {item && (
           <>
