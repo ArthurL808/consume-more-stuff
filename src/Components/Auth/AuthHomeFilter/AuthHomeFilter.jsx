@@ -23,7 +23,6 @@ class AuthHomeFilter extends Component {
   };
   
   render() {
-    console.log(this.props.items.items)
     return (
       <>
         <div className={styles.container}>

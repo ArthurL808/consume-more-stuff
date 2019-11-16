@@ -10,7 +10,6 @@ class AuthHome extends Component {
   }
 
   render() {
-    console.log("this is my props", this.props.items.items);
     return (
       <>
         <div className={styles.authHome_container}>
