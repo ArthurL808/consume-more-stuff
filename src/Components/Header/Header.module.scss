@@ -37,8 +37,12 @@ header {
 }
 
 .right {
-  span {
+  display: flex;
+  align-items: center;
+
+  h5 {
     margin-right: 10px;
+    font-weight: 400;
   }
 
   button {
