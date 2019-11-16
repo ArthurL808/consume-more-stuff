@@ -23,7 +23,9 @@ const UnAuthDetailItem = ({ ...props }) => {
             <div key={id} id={styles.detail_container} >
                 {item && (
                     <>
-                        <img src={item.imageUrl} alt={item.name} />
+                        <div className={styles.img_container}>
+                            <img src={item.imageUrl} alt={item.name} />
+                        </div>
 
                         <div className="container">
                             <h3>{item.name}</h3>

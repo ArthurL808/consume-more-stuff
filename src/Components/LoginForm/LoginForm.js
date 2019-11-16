@@ -36,50 +36,53 @@ const LoginForm = ({ setAuth, setLogin, isAuth, ...props }) => {
   });
 
   return (
-    <animated.div className={styles.login_form} style={fade}>
-      <form onSubmit={handleSubmit}>
-        {newUser && (
-          <Fragment>
-            <input
-              type="name"
-              placeholder="cloutPanda5"
-              name="name"
-              onChange={handleChange}
-            />
-          </Fragment>
-        )}
+    <animated.div style={fade} className={styles.login_wrapper}>
+      <animated.div className={styles.login_form} style={fade}>
+        <form onSubmit={handleSubmit}>
+          {newUser && (
+            <Fragment>
+              <input
+                type="name"
+                placeholder="cloutPanda5"
+                name="name"
+                onChange={handleChange}
+              />
+            </Fragment>
+          )}
 
-        <input
-          type="email"
-          placeholder="YourEmail@"
-          name="email"
-          onChange={handleChange}
-        />
-
-        <input
-          type="password"
-          name="password"
-          placeholder="password"
-          onChange={handleChange}
-        />
-        <div className={styles.btn_collection}>
           <input
-            type="submit"
-            value={newUser ? "create account" : "sign in"}
-            className={styles.submit}
+            type="email"
+            placeholder="YourEmail@"
+            name="email"
+            onChange={handleChange}
           />
-          <span>
-            {newUser ? "already a user?" : "new user?"}
-            <div
-              className={styles.signup_btn}
-              onClick={() => setNewUser(!newUser)}
-            >
-              {newUser ? "sign in" : "sign up"}
-            </div>
-          </span>
-        </div>
-      </form>
+
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={handleChange}
+          />
+          <div className={styles.btn_collection}>
+            <input
+              type="submit"
+              value={newUser ? "create account" : "sign in"}
+              className={styles.submit}
+            />
+            <span>
+              {newUser ? "already a user?" : "new user?"}
+              <div
+                className={styles.signup_btn}
+                onClick={() => setNewUser(!newUser)}
+              >
+                {newUser ? "sign in" : "sign up"}
+              </div>
+            </span>
+          </div>
+        </form>
+      </animated.div>
     </animated.div>
+
   );
 };
 
