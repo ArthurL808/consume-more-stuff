@@ -22,7 +22,9 @@ const AuthDetailItem = ({ ...props }) => {
       <div key={id} id={styles.detail_container} className="container">
         {item && (
           <>
-            <img src={item.imageUrl} alt={item.name} />
+            <div className={styles.img_container}>
+              <img src={item.imageUrl} alt={item.name} />
+            </div>
             <h3>{item.name}</h3>
 
             <h4>Description:</h4>
