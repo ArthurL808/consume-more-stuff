@@ -13,6 +13,7 @@ import Hardware from './Components/Hardware';
 import Accessories from './Components/Accessories';
 import Misc from './Components/Misc';
 
+
 //need to change to logged out routes but logged in for now...
 export const routes = [
   {
