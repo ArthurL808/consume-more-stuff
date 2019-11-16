@@ -12,7 +12,7 @@ const UnAuthDetailItem = ({ ...props }) => {
 
     useEffect(() => {
         dispatch(loadItemAsync(id));
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     return (
         <Fragment>

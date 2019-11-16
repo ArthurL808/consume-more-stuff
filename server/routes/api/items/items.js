@@ -58,14 +58,14 @@ router.put("/:id", singleUpload, (req, res) => {
     price: req.body.price,
     manufacturer: req.body.make,
     user_id: 1,
-    category_id: req.body.category,
-    itemStatus_id: req.body.itemStatus,
-    condition_id: req.body.condition
+    category_id: req.body.category_id,
+    itemStatus_id: req.body.itemStatus_id,
+    condition_id: req.body.condition_id
   };
-  if (!req.file) {
-      newItem.imageUrl = req.body.imageUrl;
-} else if(!req.body.imageUrl){
+  if (req.file) {
     newItem.imageUrl = req.file.location;
+  } else if(req.body.imageUrl && !req.file){
+    newItem.imageUrl = req.body.imageUrl;
   }else{
       newItem.imageUrl = 'https://consume-more-stuff-images.s3-us-west-2.amazonaws.com/1572740907680'
   }
@@ -82,11 +82,9 @@ router.put("/:id", singleUpload, (req, res) => {
 router.delete("/:id", (req, res) => {
   return req.db.Items.where({ id: req.params.id })
     .destroy()
-    .then(results => {
-      res.json(results);
-    })
+    .then(() => {})
     .catch(err => {
-      console.log(err.message);
+      console.log('this is err',err);
     });
 });
 

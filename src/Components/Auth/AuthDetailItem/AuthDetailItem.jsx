@@ -12,7 +12,7 @@ const AuthDetailItem = ({ ...props }) => {
 
   useEffect(() => {
     dispatch(loadItemAsync(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <Fragment>
