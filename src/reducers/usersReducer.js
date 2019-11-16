@@ -11,7 +11,7 @@ const userReducer = (state = initialState, action) => {
     case LOGIN:
       return Object.assign({}, state, action.payload);
     case LOGOUT:
-      return Object.assign({}, state, initialState);
+      return initialState;
     default:
       return state;
   }
