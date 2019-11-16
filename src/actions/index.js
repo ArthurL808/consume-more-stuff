@@ -90,9 +90,10 @@ export const deleteItemAsync = id => async dispatch => {
 };
 
 export const login = user => async dispatch => {
-  fetch(`api/auth/login`, {
+  fetch(`/api/auth/login`, {
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
     method: "POST",
-    body: user
+    body: JSON.stringify(user),
   })
     .then(response => {
       return response.json();
@@ -106,9 +107,10 @@ export const login = user => async dispatch => {
 };
 
 export const register = user => async dispatch => {
-  fetch("api/auth/register", {
+  fetch("/api/auth/register", {
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
     method: "POST",
-    body: user
+    body: JSON.stringify(user)
   })
     .then(response => {
       return response.json();
@@ -121,8 +123,9 @@ export const register = user => async dispatch => {
     });
 };
 
-export const logut = () => async dispatch => {
-  fetch("api/auth/logout", {
+export const logout = () => async dispatch => {
+  fetch("/api/auth/logout", {
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
     method: "POST"
   })
     .then(response => {
