@@ -103,13 +103,13 @@ h6 {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: $header-font;
   text-transform: uppercase;
-  color: $pink;
+  color: $black;
 }
 
+h3,
 h4,
 h5,
 h6 {
@@ -140,6 +140,5 @@ p {
 
 /* #LINKS */
 a {
-  //   color: $teal;
   text-decoration: none;
 }
